@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://br0v7j8lymtfe"]
+
+[ext_resource type="Script" uid="uid://meeu2yy48xr6" path="res://InteractableObjects/interactable_object_base.gd" id="1_rnoih"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rnoih"]
+radius = 12.0
+
+[node name="InteractableObjectBase" type="Node2D"]
+scale = Vector2(8, 8)
+script = ExtResource("1_rnoih")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_rnoih")
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

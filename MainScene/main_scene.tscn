@@ -1,3 +1,83 @@
-[gd_scene format=3 uid="uid://g3p186fwfy00"]
+[gd_scene load_steps=10 format=3 uid="uid://g3p186fwfy00"]
+
+[ext_resource type="PackedScene" uid="uid://bmolk3ejka8ve" path="res://Player/player_character.tscn" id="1_fyr3e"]
+[ext_resource type="Texture2D" uid="uid://cle2qmofmvynm" path="res://icon.svg" id="2_1lkik"]
+[ext_resource type="PackedScene" uid="uid://br0v7j8lymtfe" path="res://InteractableObjects/interactable_object_base.tscn" id="2_qjv46"]
+[ext_resource type="Texture2D" uid="uid://xfwglv31g8ay" path="res://Player/chimpo_run_sheet_v1.png" id="3_25u3m"]
+[ext_resource type="Script" uid="uid://du6toorvd0d62" path="res://MainScene/interaction_match.gd" id="4_25os6"]
+[ext_resource type="Texture2D" uid="uid://b6ob8604dup3x" path="res://InteractableObjects/Match.svg" id="4_30i71"]
+[ext_resource type="Script" uid="uid://dmpgnpeaejogj" path="res://MainScene/interaction_dynamite.gd" id="4_ga7gg"]
+[ext_resource type="Script" uid="uid://c8s6r3524bjmi" path="res://MainScene/interaction_top_door.gd" id="4_r4p44"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ji2x1"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"InteractableObjects",
+"speed": 5.0
+}]
 
 [node name="MainScene" type="Node2D"]
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("1_fyr3e")]
+position = Vector2(-196, -3)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+texture_filter = 1
+
+[node name="InteractableMatch" parent="." instance=ExtResource("2_qjv46")]
+position = Vector2(616, -225)
+is_pickup = true
+obj_name = "match"
+
+[node name="WalkPosition" type="Node2D" parent="InteractableMatch"]
+position = Vector2(0, 15)
+
+[node name="Sprite" type="Sprite2D" parent="InteractableMatch"]
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("4_30i71")
+region_rect = Rect2(0, 0, 16, 16)
+script = ExtResource("4_25os6")
+
+[node name="InteractableDynamite" parent="." instance=ExtResource("2_qjv46")]
+position = Vector2(366, 293)
+is_pickup = true
+obj_name = "dynamite"
+
+[node name="WalkPosition" type="Node2D" parent="InteractableDynamite"]
+position = Vector2(-1, -20)
+
+[node name="Sprite" type="Sprite2D" parent="InteractableDynamite"]
+texture_filter = 1
+texture = ExtResource("3_25u3m")
+flip_h = true
+flip_v = true
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+script = ExtResource("4_ga7gg")
+
+[node name="InteractableTopDoor" parent="." instance=ExtResource("2_qjv46")]
+position = Vector2(-659, -85)
+obj_name = "door"
+
+[node name="WalkPosition" type="Node2D" parent="InteractableTopDoor"]
+position = Vector2(13, -10)
+
+[node name="Sprite" type="Sprite2D" parent="InteractableTopDoor"]
+texture_filter = 1
+texture = ExtResource("3_25u3m")
+flip_h = true
+flip_v = true
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+script = ExtResource("4_r4p44")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Inventory" type="Sprite2D" parent="CanvasLayer" groups=["Inventory"]]
+position = Vector2(1789, 966)
+texture = ExtResource("2_1lkik")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Inventory"]
+sprite_frames = SubResource("SpriteFrames_ji2x1")
+animation = &"InteractableObjects"
