@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="141.62645"
-   height="231.54898"
-   viewBox="0 0 37.471997 61.264001"
+   width="5.213408"
+   height="22.469786"
+   viewBox="0 0 1.3793808 5.9451308"
    version="1.1"
    id="svg1"
    inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
@@ -24,8 +24,8 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      inkscape:zoom="2.3017575"
-     inkscape:cx="-62.560891"
-     inkscape:cy="62.778116"
+     inkscape:cx="-122.51508"
+     inkscape:cy="-50.613499"
      inkscape:window-width="3840"
      inkscape:window-height="2054"
      inkscape:window-x="-11"
@@ -38,21 +38,21 @@
      inkscape:label="Ebene 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-1.6811203,-0.0574742)">
+     transform="translate(-17.543998,-30.017624)">
     <rect
-       style="fill:#dbc68e;fill-opacity:0.92798197;stroke:#2e2731;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke"
+       style="fill:#dbc68e;fill-opacity:0.927982;stroke:#2e2731;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke"
        id="rect1"
-       width="4.8278327"
-       height="35.17421"
-       x="15.819773"
-       y="22.587358"
-       ry="0.34484527" />
+       width="0.57933992"
+       height="4.2209053"
+       x="17.944019"
+       y="31.74185"
+       ry="0.041381434" />
     <ellipse
-       style="fill:#921c1c;fill-opacity:0.92798197;stroke:#463e37;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke;stroke-opacity:1"
+       style="fill:#921c1c;fill-opacity:0.927982;stroke:#463e37;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;paint-order:fill markers stroke"
        id="path1"
        cx="18.233688"
-       cy="16.552568"
-       rx="5.7474198"
-       ry="8.3337584" />
+       cy="31.017675"
+       rx="0.68969041"
+       ry="1.000051" />
   </g>
 </svg>

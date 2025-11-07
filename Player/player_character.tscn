@@ -18,6 +18,21 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_5vbj4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-477, -254)]
+}
+
 [sub_resource type="Animation" id="Animation_a5bt4"]
 resource_name = "Wave"
 length = 2.0
@@ -34,21 +49,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(-477, -237), Vector2(-477, -254), Vector2(-477, -237)]
-}
-
-[sub_resource type="Animation" id="Animation_5vbj4"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-477, -254)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qyuka"]
@@ -70,7 +70,7 @@ offset_right = 473.0
 offset_bottom = -138.0
 theme_override_constants/outline_size = 19
 theme_override_fonts/font = ExtResource("3_a5bt4")
-theme_override_font_sizes/font_size = 41
+theme_override_font_sizes/font_size = 30
 text = "Pick up Dynamite"
 horizontal_alignment = 1
 vertical_alignment = 1

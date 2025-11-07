@@ -27,6 +27,7 @@ func wobble_effect():
 
 func player_walks_towards_obj_pos():
 	SignalBus.player_walk_towards.emit(walk_position.global_position)
+	player.tooltip.hide()
 	await SignalBus.player_arrived
 	image.execute_interaction()
 
@@ -55,4 +56,5 @@ func pick_up(obj_name):
 	image.get_parent().remove_child(image)
 	await get_tree().process_frame
 	inventory.add_child(image)
+	image.scale = Vector2(8,8)
 	queue_free()

@@ -34,7 +34,7 @@ obj_name = "match"
 position = Vector2(0, 15)
 
 [node name="Sprite" type="Sprite2D" parent="InteractableMatch"]
-scale = Vector2(0.125, 0.125)
+texture_filter = 1
 texture = ExtResource("4_30i71")
 region_rect = Rect2(0, 0, 16, 16)
 script = ExtResource("4_25os6")
