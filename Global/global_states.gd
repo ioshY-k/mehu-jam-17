@@ -9,7 +9,11 @@ const INTERACTABLE_OBJECT_BASE = preload("uid://br0v7j8lymtfe")
 
 var generatable_objects = {
 	"banana bomb": preload("uid://cb501hcor5vdh"),
-	"key": preload("uid://bgneuxavmmchk")}
+	"key": preload("uid://bgneuxavmmchk"),
+	"read": preload("uid://cqk18u4xwd4i5"),
+	"glasses": preload("uid://b788y1phxckl6"),
+	"b_letter": preload("uid://cyegbm0v3al05"),
+	"bread": preload("uid://dljufqjyf2h07")}
 
 func reset_globals():
 	$"../MainScene".get_tree().reload_current_scene()

@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cyegbm0v3al05"]
+
+[ext_resource type="Texture2D" uid="uid://7v7tjnxtgtvt" path="res://InteractableObjects/Sprites/read.png" id="1_d471r"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fkh5x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_d471r")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="BSprite" type="AnimatedSprite2D"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_fkh5x")
+autoplay = "default"
+flip_h = true
