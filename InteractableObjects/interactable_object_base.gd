@@ -58,7 +58,6 @@ func pick_up(obj_name):
 	image.get_parent().remove_child(image)
 	await get_tree().process_frame
 	inventory.add_child(image)
-	image.scale = Vector2(8,8)
 	queue_free()
 
 func no_longer_interactable():

@@ -26,5 +26,20 @@ func execute_interaction():
 					print("candle want lit dialogue")
 			"match":
 				play("match_interaction")
+			"banana":
+				GlobalStates.empty_inventory()
+				play("eat_banana_interaction")
+				interactable.no_longer_interactable()
+			"banana bomb":
+				if GlobalStates.banana_bomb_is_lit:
+					GlobalStates.empty_inventory()
+					GlobalStates.banana_bomb_is_lit = false
+					play("lit_banana_bomb_interaction")
+					await animation_finished
+					play("explode_open")
+					open = true
+				else:
+					print("banana candle want lit dialogue")
+				
 		
 	GlobalStates.is_interacting = false

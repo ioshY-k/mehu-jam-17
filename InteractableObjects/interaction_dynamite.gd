@@ -19,6 +19,10 @@ func execute_interaction():
 			$"../../InteractableTopDoor/Sprite".open = true
 			print($"../../InteractableTopDoor/Sprite".open)
 			get_parent().queue_free()
+		"banana":
+			GlobalStates.empty_inventory()
+			GlobalStates.create_inventory_object("banana bomb")
+			get_parent().queue_free()
 
 			
 		

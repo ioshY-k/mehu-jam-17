@@ -1,18 +1,19 @@
-[gd_scene load_steps=47 format=4 uid="uid://g3p186fwfy00"]
+[gd_scene load_steps=68 format=4 uid="uid://g3p186fwfy00"]
 
 [ext_resource type="Script" uid="uid://ddci1v7cvwl7b" path="res://MainScene/camera.gd" id="1_fkh5x"]
 [ext_resource type="PackedScene" uid="uid://bmolk3ejka8ve" path="res://Player/player_character.tscn" id="1_fyr3e"]
 [ext_resource type="PackedScene" uid="uid://br0v7j8lymtfe" path="res://InteractableObjects/interactable_object_base.tscn" id="2_qjv46"]
+[ext_resource type="Texture2D" uid="uid://cehec3tfgwfk1" path="res://InteractableObjects/Sprites/Tileset_mono.png" id="3_1dx1v"]
 [ext_resource type="Texture2D" uid="uid://xfwglv31g8ay" path="res://Player/chimpo_run_sheet_v1.png" id="3_25u3m"]
-[ext_resource type="Script" uid="uid://du6toorvd0d62" path="res://InteractableObjects/interaction_match.gd" id="4_25os6"]
 [ext_resource type="Texture2D" uid="uid://b6ob8604dup3x" path="res://InteractableObjects/Sprites/Match.svg" id="4_30i71"]
 [ext_resource type="Script" uid="uid://dmpgnpeaejogj" path="res://InteractableObjects/interaction_dynamite.gd" id="4_ga7gg"]
-[ext_resource type="Script" uid="uid://c8s6r3524bjmi" path="res://InteractableObjects/interaction_top_door.gd" id="4_r4p44"]
 [ext_resource type="Texture2D" uid="uid://7m7os3vly3c" path="res://WhiteNoise/WhiteNoise1.png" id="5_6tl0i"]
 [ext_resource type="Texture2D" uid="uid://b631qve628k1q" path="res://WhiteNoise/WhiteNoise2.png" id="6_g8jqs"]
+[ext_resource type="Texture2D" uid="uid://bq6rb8w3hnxt" path="res://InteractableObjects/Sprites/Match.png" id="6_hbof4"]
 [ext_resource type="Texture2D" uid="uid://c7lkqs037tg66" path="res://Player/PlayerTestSprite.svg" id="6_n13s5"]
 [ext_resource type="Script" uid="uid://jg2xsyphbnba" path="res://InteractableObjects/interaction_right_door.gd" id="7_5ltmk"]
 [ext_resource type="Texture2D" uid="uid://wibkkd7c3o4c" path="res://WhiteNoise/WhiteNoise3.png" id="7_fhqjx"]
+[ext_resource type="Texture2D" uid="uid://o0ko7g3jlpsy" path="res://InteractableObjects/Sprites/Banana.png" id="7_hm72d"]
 [ext_resource type="Texture2D" uid="uid://dsfabr5kjstsh" path="res://InteractableObjects/Sprites/Bomb_v1.png" id="8_fhqjx"]
 [ext_resource type="Texture2D" uid="uid://ddapimkwra8ky" path="res://TodoList/BlackFadeEndscreen.svg" id="9_1m37m"]
 [ext_resource type="Script" uid="uid://cfpkn6t0lguvs" path="res://InteractableObjects/interaction_banana.gd" id="9_aol1h"]
@@ -20,7 +21,10 @@
 [ext_resource type="Script" uid="uid://d27tt4131quhy" path="res://MainScene/end_screen.gd" id="10_48xrq"]
 [ext_resource type="FontFile" uid="uid://dn4wgyr8kg1lf" path="res://POKEMON CLASSIC.TTF" id="11_48xrq"]
 [ext_resource type="Script" uid="uid://dn388j6fatx4t" path="res://InteractableObjects/interaction_left_door.gd" id="12_g8jqs"]
+[ext_resource type="Texture2D" uid="uid://c2ncnypv5jm44" path="res://InteractableObjects/Sprites/Knife.png" id="12_hm72d"]
+[ext_resource type="Script" uid="uid://laiag1d2q2r2" path="res://InteractableObjects/interaction_knive.gd" id="13_wvtj6"]
 [ext_resource type="AudioStream" uid="uid://iaemxt1vvqtt" path="res://MainScene/bgmusic.wav" id="14_55fm0"]
+[ext_resource type="Texture2D" uid="uid://bx6jmwsgkhsx7" path="res://InteractableObjects/Sprites/Gorilla.png" id="14_hbof4"]
 [ext_resource type="AudioStream" uid="uid://bbqob4j45yih5" path="res://TodoList/credits.wav" id="14_pyoqi"]
 [ext_resource type="Texture2D" uid="uid://cvik1y7v35shy" path="res://InteractableObjects/Sprites/Inventory_v1.png" id="16_vw3bk"]
 [ext_resource type="Texture2D" uid="uid://bfwyiq24ej407" path="res://InteractableObjects/Sprites/Tilemap_v2.png" id="23_aol1h"]
@@ -37,19 +41,43 @@ texture = ExtResource("23_aol1h")
 1:2/0 = 0
 2:2/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t5cxr"]
+texture = ExtResource("23_aol1h")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hbof4"]
+texture = ExtResource("3_1dx1v")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_t5cxr"]
 sources/0 = SubResource("TileSetAtlasSource_1dx1v")
+sources/1 = SubResource("TileSetAtlasSource_t5cxr")
+sources/2 = SubResource("TileSetAtlasSource_hbof4")
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_fkh5x"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_t5cxr"]
 animations = [{
-"frames": [],
-"loop": true,
-"name": &"banana_interaction",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_30i71")
+"texture": ExtResource("6_hbof4")
 }],
 "loop": true,
 "name": &"default",
@@ -57,21 +85,77 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("8_fhqjx")
+"texture": ExtResource("6_hbof4")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_30i71")
+"texture": ExtResource("7_hm72d")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_fhqjx")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_30i71")
+"texture": ExtResource("6_hbof4")
 }],
 "loop": true,
-"name": &"match_interaction",
+"name": &"eat_banana_interaction",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"explode_banana_bomb_interaction",
 "speed": 5.0
 }]
+
+[sub_resource type="GDScript" id="GDScript_hbof4"]
+script/source = "extends AnimatedSprite2D
+
+var interactable: InteractableBase
+@onready var deatheffect: AnimatedSprite2D = $Deatheffect
+@onready var animation_player: AnimationPlayer = $Deatheffect/AnimationPlayer
+
+
+func _ready() -> void:
+	interactable = get_parent()
+
+func execute_interaction():
+	print(\"match is interacted with\")
+	match GlobalStates.inventory_object_name:
+		\"\":
+			interactable.pick_up(interactable.obj_name)
+		\"dynamite\":
+			print(\"light dynamite\")
+			hide()
+			GlobalStates.dynamite_is_lit = true
+			
+			GlobalStates.inventory.get_child(0).play(\"match_interaction\")
+			deatheffect.play(\"deathtimer\")
+			animation_player.play(\"deathtimer\")
+			
+			GlobalStates.is_interacting = false
+
+			await animation_player.animation_finished
+			if GlobalStates.dynamite_is_lit:
+				GlobalStates.reset_globals()
+		
+		\"banana\":
+			GlobalStates.empty_inventory()
+			play(\"banana_interaction\")
+			interactable.no_longer_interactable()
+		\"banana bomb\":
+			print(\"light banana bomb\")
+			hide()
+			GlobalStates.banana_bomb_is_lit = true
+			
+			GlobalStates.inventory.get_child(0).play(\"match_interaction\")
+			deatheffect.play(\"deathtimer\")
+			animation_player.play(\"deathtimer\")
+			
+			GlobalStates.is_interacting = false
+
+			await animation_player.animation_finished
+			if GlobalStates.banana_bomb_is_lit:
+				GlobalStates.reset_globals()
+			
+		
+	GlobalStates.is_interacting = false
+"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vw3bk"]
 animations = [{
@@ -147,6 +231,66 @@ _data = {
 &"deathtimer": SubResource("Animation_aol1h")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_36glv"]
+atlas = ExtResource("7_hm72d")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fkh5x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36glv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_hbof4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_hm72d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_hbof4")
+}],
+"loop": true,
+"name": &"eat_banana_interaction",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"explode_banana_bomb_interaction",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6j064"]
+atlas = ExtResource("12_hm72d")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uk4g7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6j064")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_enkwa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_30i71")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_vw3bk"]
 atlas = ExtResource("8_fhqjx")
 region = Rect2(0, 0, 16, 16)
@@ -216,11 +360,23 @@ animations = [{
 "speed": 9.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_n13s5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_yhuqc"]
+atlas = ExtResource("14_hbof4")
+region = Rect2(0, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7i6w"]
+atlas = ExtResource("3_1dx1v")
+region = Rect2(48, 16, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ffk8d"]
+atlas = ExtResource("14_hbof4")
+region = Rect2(0, 16, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hm72d"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_25u3m")
+"texture": SubResource("AtlasTexture_yhuqc")
 }],
 "loop": false,
 "name": &"default",
@@ -228,25 +384,65 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_25u3m")
+"texture": SubResource("AtlasTexture_p7i6w")
+}],
+"loop": false,
+"name": &"explode_open",
+"speed": 5.0
 }, {
+"frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_n13s5")
+"texture": SubResource("AtlasTexture_ffk8d")
+}],
+"loop": true,
+"name": &"key_interaction",
+"speed": 5.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_wvtj6"]
+script/source = "extends AnimatedSprite2D
+
+var open = false
+var interactable: InteractableBase
+
+func _ready() -> void:
+	interactable = get_parent()
+
+func execute_interaction():
+	print(\"top door is interacted with\")
+	if open:
+		interactable.switch_room(Consts.DIRECTIONS.UP)
+	else:
+		match GlobalStates.inventory_object_name:
+			\"key\":
+				open = true
+				play(\"key_interaction\")
+		
+	GlobalStates.is_interacting = false
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8is5o"]
+atlas = ExtResource("3_1dx1v")
+region = Rect2(48, 16, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n13s5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yhuqc")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
 }, {
-"duration": 1.0,
-"texture": ExtResource("3_25u3m")
+"frames": [],
+"loop": true,
+"name": &"eat_banana_interaction",
+"speed": 5.0
 }, {
+"frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_n13s5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_25u3m")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_n13s5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_25u3m")
+"texture": SubResource("AtlasTexture_p7i6w")
 }],
 "loop": false,
 "name": &"explode_open",
@@ -257,6 +453,20 @@ animations = [{
 "texture": ExtResource("4_30i71")
 }, {
 "duration": 1.0,
+"texture": ExtResource("8_fhqjx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_30i71")
+}],
+"loop": false,
+"name": &"lit_banana_bomb_interaction",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_30i71")
+}, {
+"duration": 1.0,
 "texture": ExtResource("3_25u3m")
 }, {
 "duration": 1.0,
@@ -264,6 +474,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("3_25u3m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8is5o")
 }],
 "loop": false,
 "name": &"lit_dynamite_interaction",
@@ -282,12 +495,99 @@ animations = [{
 "loop": false,
 "name": &"match_interaction",
 "speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uk4g7"]
+atlas = ExtResource("3_1dx1v")
+region = Rect2(48, 16, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ffk8d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uk4g7")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
 }, {
 "frames": [],
 "loop": true,
-"name": &"new_animation",
+"name": &"eat_banana_interaction",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p7i6w")
+}],
+"loop": false,
+"name": &"explode_open",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_30i71")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_fhqjx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_30i71")
+}],
+"loop": false,
+"name": &"lit_banana_bomb_interaction",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_30i71")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_25u3m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_30i71")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_25u3m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8is5o")
+}],
+"loop": false,
+"name": &"lit_dynamite_interaction",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_25u3m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_n13s5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_25u3m")
+}],
+"loop": false,
+"name": &"match_interaction",
 "speed": 5.0
 }]
+
+[sub_resource type="GDScript" id="GDScript_5y18u"]
+script/source = "extends AnimatedSprite2D
+
+var interactable: InteractableBase
+
+func _ready() -> void:
+	interactable = get_parent()
+
+func execute_interaction():
+	print(\"broken door is interacted with\")
+	interactable.switch_room(Consts.DIRECTIONS.RIGHT)
+				
+		
+	GlobalStates.is_interacting = false
+"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7qhia"]
 animations = [{
@@ -465,10 +765,15 @@ _data = {
 
 [node name="MainScene" type="Node2D"]
 
+[node name="Background" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(591.68, 591.68)
+texture = ExtResource("16_vw3bk")
+
 [node name="TileMap" type="TileMapLayer" parent="."]
 texture_filter = 1
 scale = Vector2(8, 8)
-tile_map_data = PackedByteArray("AAABAP7/AAABAAEAAAAAAP7/AAABAAEAAAD///7/AAABAAEAAAD+//7/AAABAAEAAAD9//7/AAABAAEAAAD9////AAABAAEAAAAAAP//AAABAAEAAAABAP//AAABAAEAAAD/////AAABAAEAAAD+////AAABAAEAAAD9/wAAAAABAAEAAAD+/wAAAAABAAEAAAD//wAAAAABAAEAAAAAAAAAAAABAAEAAAABAAAAAAABAAEAAAABAAEAAAABAAEAAAAAAAEAAAABAAEAAAD//wEAAAABAAEAAAD+/wEAAAABAAEAAAD9/wEAAAABAAEAAAD+/wIAAAABAAIAAAD//wIAAAABAAIAAAAAAAIAAAABAAIAAAABAAIAAAABAAIAAAD+//3/AAABAAAAAAD///3/AAABAAAAAAAAAP3/AAABAAAAAAABAP3/AAABAAAAAAD9/wIAAAABAAIAAAD9//3/AAABAAAAAAD6//3/AAAAAAAAAAD6//7/AAAAAAEAAAD6////AAAAAAEAAAD6/wAAAAAAAAEAAAD6/wEAAAAAAAEAAAD6/wIAAAAAAAIAAAD7//3/AAABAAAAAAD7//7/AAABAAEAAAD7////AAABAAEAAAD7/wAAAAABAAEAAAD7/wEAAAABAAEAAAD7/wIAAAABAAIAAAD8//3/AAABAAAAAAD8//7/AAABAAEAAAD8////AAABAAEAAAD8/wAAAAABAAEAAAD8/wEAAAABAAEAAAD8/wIAAAABAAIAAAACAP3/AAABAAAAAAACAP7/AAABAAEAAAACAP//AAABAAEAAAACAAAAAAABAAEAAAACAAEAAAABAAEAAAACAAIAAAABAAIAAAADAP3/AAABAAAAAAADAP7/AAABAAEAAAADAP//AAABAAEAAAADAAAAAAABAAEAAAADAAEAAAABAAEAAAADAAIAAAABAAIAAAAEAP3/AAABAAAAAAAEAP7/AAABAAEAAAAEAP//AAABAAEAAAAEAAAAAAABAAEAAAAEAAEAAAABAAEAAAAEAAIAAAABAAIAAAAFAP3/AAACAAAAAAAFAP7/AAACAAEAAAAFAP//AAACAAEAAAAFAAAAAAACAAEAAAAFAAEAAAACAAEAAAAFAAIAAAACAAIAAAA=")
+tile_map_data = PackedByteArray("AAABAP7/AgABAAEAAAAAAP7/AgABAAEAAAD///7/AgABAAEAAAD+//7/AgABAAEAAAD9//7/AgABAAEAAAD9////AgABAAEAAAAAAP//AgABAAEAAAABAP//AgABAAEAAAD/////AgABAAEAAAD+////AgABAAEAAAD9/wAAAgABAAEAAAD+/wAAAgABAAEAAAD//wAAAgABAAEAAAAAAAAAAgABAAEAAAABAAAAAgABAAEAAAABAAEAAgABAAEAAAAAAAEAAgABAAEAAAD//wEAAgABAAEAAAD+/wEAAgABAAEAAAD9/wEAAgABAAEAAAD+/wIAAgABAAIAAAD//wIAAgABAAIAAAAAAAIAAgABAAIAAAABAAIAAgABAAIAAAD+//3/AgABAAAAAAD///3/AgABAAAAAAAAAP3/AgABAAAAAAABAP3/AgABAAAAAAD9/wIAAgABAAIAAAD9//3/AgABAAAAAAD6//3/AgAAAAAAAAD6//7/AgAAAAEAAAD6////AgAAAAEAAAD6/wIAAgAAAAIAAAD7//3/AgABAAAAAAD7//7/AgABAAEAAAD7/wAAAAABAAEAAAD7/wEAAAABAAEAAAD7/wIAAgABAAIAAAD8//3/AgABAAAAAAD8//7/AgABAAEAAAD8////AgABAAEAAAD8/wAAAgABAAEAAAD8/wEAAgABAAEAAAD8/wIAAgABAAIAAAACAP3/AgABAAAAAAACAP7/AgABAAEAAAACAP//AgABAAEAAAACAAAAAgABAAEAAAACAAEAAgABAAEAAAACAAIAAgABAAIAAAADAP3/AgABAAAAAAADAP7/AgABAAEAAAADAP//AgABAAEAAAADAAAAAgABAAEAAAADAAEAAgABAAEAAAADAAIAAgABAAIAAAAEAP3/AgABAAAAAAAEAP7/AgABAAEAAAAEAP//AgABAAEAAAAEAAAAAgABAAEAAAAEAAEAAgABAAEAAAAEAAIAAgABAAIAAAAFAP3/AgACAAAAAAAFAP7/AgACAAEAAAAFAP//AgACAAEAAAAFAAAAAgACAAEAAAAFAAEAAgACAAEAAAAFAAIAAgACAAIAAAD7////AgABAAEAAAD6/wEAAgAAAAEAAAD6/wAAAgAAAAEAAADz//7/AgABAAAAAAD0//7/AgABAAAAAAD1//7/AgABAAAAAAD2//7/AgABAAAAAAD3//7/AgABAAAAAADy//7/AgABAAAAAADy/wIAAgABAAIAAADz/wIAAgABAAIAAAD0/wIAAgABAAIAAAD1/wIAAgABAAIAAAD2/wIAAgABAAIAAAD3/wIAAgABAAIAAAD4/wIAAgACAAIAAAD4////AgACAAEAAAD4/wAAAgACAAEAAAD4/wEAAgACAAEAAAD4//7/AgACAAAAAADx//7/AgABAAAAAADx/wIAAgABAAIAAADw/wIAAgAAAAIAAADw//7/AgAAAAAAAADw////AgAAAAEAAADw/wAAAgAAAAEAAADw/wEAAgAAAAEAAADy////AgABAAEAAADy/wAAAgABAAEAAADz////AgABAAEAAAD0////AgABAAEAAAD1////AgABAAEAAAD2////AgABAAEAAADz/wAAAgABAAEAAAD0/wAAAgABAAEAAAD1/wAAAgABAAEAAAD2/wAAAgABAAEAAAA=")
 tile_set = SubResource("TileSet_t5cxr")
 
 [node name="Camera2D" type="Camera2D" parent="." groups=["Camera"]]
@@ -485,10 +790,9 @@ position = Vector2(-0.5, -12.875)
 
 [node name="Sprite" type="AnimatedSprite2D" parent="InteractableMatch"]
 texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_fkh5x")
-animation = &"banana_interaction"
+sprite_frames = SubResource("SpriteFrames_t5cxr")
 autoplay = "default"
-script = ExtResource("4_25os6")
+script = SubResource("GDScript_hbof4")
 
 [node name="Deatheffect" type="AnimatedSprite2D" parent="InteractableMatch/Sprite"]
 z_index = 10
@@ -516,6 +820,34 @@ sprite_frames = SubResource("SpriteFrames_fkh5x")
 autoplay = "default"
 script = ExtResource("9_aol1h")
 
+[node name="InteractableKnive" parent="." instance=ExtResource("2_qjv46")]
+position = Vector2(-1568, -80)
+is_pickup = true
+obj_name = "knive"
+
+[node name="WalkPosition" type="Node2D" parent="InteractableKnive"]
+position = Vector2(-0.5, -12.875)
+
+[node name="Sprite" type="AnimatedSprite2D" parent="InteractableKnive"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_uk4g7")
+autoplay = "default"
+script = ExtResource("13_wvtj6")
+
+[node name="InteractableGlasses" parent="." instance=ExtResource("2_qjv46")]
+position = Vector2(-1824, 160)
+is_pickup = true
+obj_name = "glasses"
+
+[node name="WalkPosition" type="Node2D" parent="InteractableGlasses"]
+position = Vector2(-0.5, -12.875)
+
+[node name="Sprite" type="AnimatedSprite2D" parent="InteractableGlasses"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_enkwa")
+autoplay = "default"
+script = ExtResource("13_wvtj6")
+
 [node name="InteractableDynamite" parent="." instance=ExtResource("2_qjv46")]
 position = Vector2(233, -240)
 is_pickup = true
@@ -536,38 +868,51 @@ script = ExtResource("4_ga7gg")
 
 [node name="InteractableTopDoor" parent="." instance=ExtResource("2_qjv46")]
 position = Vector2(12, -297)
-obj_name = "top_door"
+obj_name = "top door"
 
 [node name="WalkPosition" type="Node2D" parent="InteractableTopDoor"]
 position = Vector2(-0.875, 14.25)
 
 [node name="Sprite" type="AnimatedSprite2D" parent="InteractableTopDoor"]
 texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_n13s5")
+sprite_frames = SubResource("SpriteFrames_hm72d")
+animation = &"explode_open"
 autoplay = "default"
 flip_h = true
 flip_v = true
-script = ExtResource("4_r4p44")
+script = SubResource("GDScript_wvtj6")
 
 [node name="InteractableLeftDoor" parent="." instance=ExtResource("2_qjv46")]
 position = Vector2(-671, -7)
-obj_name = "left_door"
+obj_name = "left door"
 
 [node name="WalkPosition" type="Node2D" parent="InteractableLeftDoor"]
 position = Vector2(17.375, 0.125)
 
 [node name="Sprite" type="AnimatedSprite2D" parent="InteractableLeftDoor"]
 texture_filter = 1
+position = Vector2(3.875, 0.875)
 sprite_frames = SubResource("SpriteFrames_n13s5")
-animation = &"match_interaction"
 autoplay = "default"
-flip_h = true
-flip_v = true
 script = ExtResource("12_g8jqs")
+
+[node name="InteractableBrokenDoor" parent="." instance=ExtResource("2_qjv46")]
+position = Vector2(-1079, 15)
+obj_name = "broken door"
+
+[node name="WalkPosition" type="Node2D" parent="InteractableBrokenDoor"]
+position = Vector2(-16, 0)
+
+[node name="Sprite" type="AnimatedSprite2D" parent="InteractableBrokenDoor"]
+texture_filter = 1
+position = Vector2(3.875, 0.875)
+sprite_frames = SubResource("SpriteFrames_ffk8d")
+autoplay = "default"
+script = SubResource("GDScript_5y18u")
 
 [node name="InteractableRightDoor" parent="." instance=ExtResource("2_qjv46")]
 position = Vector2(940, -4)
-obj_name = "right_door"
+obj_name = "right door"
 
 [node name="WalkPosition" type="Node2D" parent="InteractableRightDoor"]
 position = Vector2(-14.375, 0.75)
@@ -616,7 +961,7 @@ text = "[center]
 
 [table=2]
 [cell][font size=24][color=#88A0FF]Art[/color][/font][/cell]
-[cell][font size=34][b][color=#FFFFFF]Caner[/color][/b][/font][/cell]
+[cell][font size=34][b][color=#FFFFFF]Caner Gökdemir[/color][/b][/font][/cell]
 
 [cell][/cell][cell][/cell]
 
@@ -626,7 +971,7 @@ text = "[center]
 [cell][/cell][cell][/cell]
 
 [cell][font size=24][color=#FF8888]Design[/color][/font][/cell]
-[cell][font size=34][b][color=#FFFFFF]Caner[/color][/b][/font][/cell]
+[cell][font size=34][b][color=#FFFFFF]Caner Gökdemir[/color][/b][/font][/cell]
 
 [cell][/cell][cell][/cell]
 
