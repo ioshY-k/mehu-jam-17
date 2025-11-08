@@ -77,4 +77,7 @@ func switch_room(direction: int):
 		Consts.DIRECTIONS.DOWN:
 			pass
 		Consts.DIRECTIONS.LEFT:
-			pass
+			tween.set_trans(Tween.TRANS_LINEAR)
+			tween.tween_property(player,"position:x", player.position.x-300, Consts.player_walk_speed)
+			tween.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
+			tween.tween_property(camera, "position:x", camera.position.x-1920, 1)

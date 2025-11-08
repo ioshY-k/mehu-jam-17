@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://g3p186fwfy00"]
+[gd_scene load_steps=34 format=3 uid="uid://g3p186fwfy00"]
 
 [ext_resource type="Script" uid="uid://ddci1v7cvwl7b" path="res://MainScene/camera.gd" id="1_fkh5x"]
 [ext_resource type="PackedScene" uid="uid://bmolk3ejka8ve" path="res://Player/player_character.tscn" id="1_fyr3e"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://bphckpoqh41kk" path="res://TodoList/TodoListEndscreen.svg" id="10_5ltmk"]
 [ext_resource type="Script" uid="uid://d27tt4131quhy" path="res://MainScene/end_screen.gd" id="10_48xrq"]
 [ext_resource type="FontFile" uid="uid://dn4wgyr8kg1lf" path="res://POKEMON CLASSIC.TTF" id="11_48xrq"]
+[ext_resource type="Script" uid="uid://dn388j6fatx4t" path="res://InteractableObjects/interaction_left_door.gd" id="12_g8jqs"]
 [ext_resource type="AudioStream" uid="uid://iaemxt1vvqtt" path="res://MainScene/bgmusic.wav" id="14_55fm0"]
 [ext_resource type="AudioStream" uid="uid://bbqob4j45yih5" path="res://TodoList/credits.wav" id="14_pyoqi"]
 
@@ -171,6 +172,25 @@ animations = [{
 }],
 "loop": false,
 "name": &"explode_open",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"lit_dynamite_interaction",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_25u3m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_n13s5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_25u3m")
+}],
+"loop": true,
+"name": &"noItem_interaction",
 "speed": 5.0
 }]
 
@@ -412,6 +432,22 @@ autoplay = "default"
 flip_h = true
 flip_v = true
 script = ExtResource("4_r4p44")
+
+[node name="InteractableLeftDoor" parent="." instance=ExtResource("2_qjv46")]
+position = Vector2(11, -497)
+obj_name = "door"
+
+[node name="WalkPosition" type="Node2D" parent="InteractableLeftDoor"]
+position = Vector2(-0.875, 14.25)
+
+[node name="Sprite" type="AnimatedSprite2D" parent="InteractableLeftDoor"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_n13s5")
+animation = &"explode_open"
+autoplay = "default"
+flip_h = true
+flip_v = true
+script = ExtResource("12_g8jqs")
 
 [node name="InteractableRightDoor" parent="." instance=ExtResource("2_qjv46")]
 position = Vector2(940, -4)
