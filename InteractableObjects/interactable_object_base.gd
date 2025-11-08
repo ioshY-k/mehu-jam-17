@@ -8,11 +8,13 @@ var walk_position: Node2D
 var player: Player
 var inventory
 var image: Sprite2D
+var camera: Camera2D
 
 func _ready():
 	image = $Sprite
 	inventory = get_tree().get_first_node_in_group("Inventory")
 	player = get_tree().get_first_node_in_group("Player")
+	camera = get_tree().get_first_node_in_group("Camera")
 	walk_position = find_child("WalkPosition")
 
 func _process(_delta: float) -> void:
@@ -58,3 +60,21 @@ func pick_up(obj_name):
 	inventory.add_child(image)
 	image.scale = Vector2(8,8)
 	queue_free()
+
+func switch_room(direction: int):
+	var tween = create_tween()
+	match direction:
+		GlobalStates.DIRECTIONS.UP:
+			tween.set_trans(Tween.TRANS_LINEAR)
+			tween.tween_property(player,"position:y", player.position.y-300, 0.5)
+			tween.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
+			tween.tween_property(camera, "position:y", camera.position.y-1080, 1)
+		GlobalStates.DIRECTIONS.RIGHT:
+			tween.set_trans(Tween.TRANS_LINEAR)
+			tween.tween_property(player,"position:x", player.position.x+300, 0.5)
+			tween.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
+			tween.tween_property(camera, "position:x", camera.position.x+1920, 1)
+		GlobalStates.DIRECTIONS.DOWN:
+			pass
+		GlobalStates.DIRECTIONS.LEFT:
+			pass

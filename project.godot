@@ -24,6 +24,9 @@ GlobalStates="*res://Global/global_states.gd"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/resizable=false
+window/stretch/mode="viewport"
+window/stretch/aspect="ignore"
 
 [dotnet]
 
@@ -32,6 +35,8 @@ project/assembly_name="mehu jam 17"
 [global_group]
 
 Player=""
+Camera=""
+Inventory=""
 
 [input]
 

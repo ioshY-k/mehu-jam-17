@@ -1,13 +1,18 @@
-[gd_scene load_steps=10 format=3 uid="uid://g3p186fwfy00"]
+[gd_scene load_steps=19 format=3 uid="uid://g3p186fwfy00"]
 
 [ext_resource type="PackedScene" uid="uid://bmolk3ejka8ve" path="res://Player/player_character.tscn" id="1_fyr3e"]
 [ext_resource type="Texture2D" uid="uid://cle2qmofmvynm" path="res://icon.svg" id="2_1lkik"]
 [ext_resource type="PackedScene" uid="uid://br0v7j8lymtfe" path="res://InteractableObjects/interactable_object_base.tscn" id="2_qjv46"]
 [ext_resource type="Texture2D" uid="uid://xfwglv31g8ay" path="res://Player/chimpo_run_sheet_v1.png" id="3_25u3m"]
-[ext_resource type="Script" uid="uid://du6toorvd0d62" path="res://MainScene/interaction_match.gd" id="4_25os6"]
+[ext_resource type="Script" uid="uid://du6toorvd0d62" path="res://InteractableObjects/interaction_match.gd" id="4_25os6"]
 [ext_resource type="Texture2D" uid="uid://b6ob8604dup3x" path="res://InteractableObjects/Match.svg" id="4_30i71"]
-[ext_resource type="Script" uid="uid://dmpgnpeaejogj" path="res://MainScene/interaction_dynamite.gd" id="4_ga7gg"]
-[ext_resource type="Script" uid="uid://c8s6r3524bjmi" path="res://MainScene/interaction_top_door.gd" id="4_r4p44"]
+[ext_resource type="Script" uid="uid://dmpgnpeaejogj" path="res://InteractableObjects/interaction_dynamite.gd" id="4_ga7gg"]
+[ext_resource type="Script" uid="uid://c8s6r3524bjmi" path="res://InteractableObjects/interaction_top_door.gd" id="4_r4p44"]
+[ext_resource type="Script" uid="uid://jg2xsyphbnba" path="res://InteractableObjects/interaction_right_door.gd" id="7_5ltmk"]
+[ext_resource type="Texture2D" uid="uid://ddapimkwra8ky" path="res://TodoList/BlackFadeEndscreen.svg" id="9_1m37m"]
+[ext_resource type="Texture2D" uid="uid://bphckpoqh41kk" path="res://TodoList/TodoListEndscreen.svg" id="10_5ltmk"]
+[ext_resource type="Script" uid="uid://d27tt4131quhy" path="res://MainScene/end_screen.gd" id="10_48xrq"]
+[ext_resource type="FontFile" uid="uid://dn4wgyr8kg1lf" path="res://POKEMON CLASSIC.TTF" id="11_48xrq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ji2x1"]
 animations = [{
@@ -17,12 +22,172 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_55fm0"]
+resource_name = "CreditRoll"
+length = 7.0
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../BlackFade:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4, 5.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(19, 1000), Vector2(19, -1458)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../CheckList:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5.4, 7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../BlackFade:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../CheckList:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 5.4, 7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_pyoqi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../BlackFade:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(19, -1458)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../CheckList:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../BlackFade:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../CheckList:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_5ltmk"]
+resource_name = "default"
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../BlackFade:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CheckList:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fkh5x"]
+_data = {
+&"CreditRoll": SubResource("Animation_55fm0"),
+&"RESET": SubResource("Animation_pyoqi"),
+&"default": SubResource("Animation_5ltmk")
+}
+
 [node name="MainScene" type="Node2D"]
 
-[node name="PlayerCharacter" parent="." instance=ExtResource("1_fyr3e")]
-position = Vector2(-196, -3)
-
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." groups=["Camera"]]
 texture_filter = 1
 
 [node name="InteractableMatch" parent="." instance=ExtResource("2_qjv46")]
@@ -57,11 +222,11 @@ region_rect = Rect2(0, 0, 16, 16)
 script = ExtResource("4_ga7gg")
 
 [node name="InteractableTopDoor" parent="." instance=ExtResource("2_qjv46")]
-position = Vector2(-659, -85)
+position = Vector2(11, -497)
 obj_name = "door"
 
 [node name="WalkPosition" type="Node2D" parent="InteractableTopDoor"]
-position = Vector2(13, -10)
+position = Vector2(-0.875, 14.25)
 
 [node name="Sprite" type="Sprite2D" parent="InteractableTopDoor"]
 texture_filter = 1
@@ -72,12 +237,108 @@ region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 script = ExtResource("4_r4p44")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="InteractableRightDoor" parent="." instance=ExtResource("2_qjv46")]
+position = Vector2(940, -4)
+obj_name = "door"
 
-[node name="Inventory" type="Sprite2D" parent="CanvasLayer" groups=["Inventory"]]
+[node name="WalkPosition" type="Node2D" parent="InteractableRightDoor"]
+position = Vector2(-14.375, 0.75)
+
+[node name="Sprite" type="Sprite2D" parent="InteractableRightDoor"]
+texture_filter = 1
+texture = ExtResource("3_25u3m")
+flip_h = true
+flip_v = true
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+script = ExtResource("7_5ltmk")
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("1_fyr3e")]
+position = Vector2(-196, -3)
+
+[node name="UICanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Inventory" type="Sprite2D" parent="UICanvasLayer" groups=["Inventory"]]
 position = Vector2(1789, 966)
 texture = ExtResource("2_1lkik")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Inventory"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="UICanvasLayer/Inventory"]
 sprite_frames = SubResource("SpriteFrames_ji2x1")
 animation = &"InteractableObjects"
+
+[node name="CreditsCanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("10_48xrq")
+
+[node name="BlackFade" type="Sprite2D" parent="CreditsCanvasLayer"]
+position = Vector2(960, 540)
+texture = ExtResource("9_1m37m")
+
+[node name="Label" type="RichTextLabel" parent="CreditsCanvasLayer"]
+offset_left = 19.0
+offset_top = -1458.0
+offset_right = 1915.0
+offset_bottom = -23.0
+theme_override_constants/table_h_separation = 143
+theme_override_constants/table_v_separation = 58
+theme_override_font_sizes/normal_font_size = 76
+theme_override_font_sizes/bold_font_size = 36
+theme_override_font_sizes/bold_italics_font_size = 186
+theme_override_font_sizes/italics_font_size = 36
+bbcode_enabled = true
+text = "[center]
+[wave amp=20 freq=3][b][color=#FFD700][font size=38]CREDITS[/font][/color][/b][/wave]
+
+[table=2]
+[cell][font size=24][color=#88A0FF]Art[/color][/font][/cell]
+[cell][font size=34][b][color=#FFFFFF]Caner[/color][/b][/font][/cell]
+
+[cell][/cell][cell][/cell]
+
+[cell][font size=24][color=#77FF77]Programming[/color][/font][/cell]
+[cell][font size=34][b][color=#FFFFFF]Joshua Kirchberg[/color][/b][/font][/cell]
+
+[cell][/cell][cell][/cell]
+
+[cell][font size=24][color=#FF8888]Design[/color][/font][/cell]
+[cell][font size=34][b][color=#FFFFFF]Caner[/color][/b][/font][/cell]
+
+[cell][/cell][cell][/cell]
+
+[cell][font size=24][color=#FFD088]Music & Sound[/color][/font][/cell]
+[cell][font size=34][b][color=#FFFFFF]freesound.org[/color][/b][/font][/cell]
+
+[cell][/cell][cell][/cell]
+
+[cell][font size=24][color=#AAAAAA]Special Thanks[/color][/font][/cell]
+[cell][font size=32][i][color=#FFFFFF]Monkey,
+The letter \"B\",
+You, the Player![/color][/i][/font][/cell]
+[/table]
+
+[shake rate=25 level=10][color=#FF66AA][font size=30][b]Thank you for playing![/b][/font][/color][/shake]
+[/center]"
+horizontal_alignment = 1
+
+[node name="CheckList" type="Sprite2D" parent="CreditsCanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(977, 572)
+texture = ExtResource("10_5ltmk")
+
+[node name="CreditAnimation" type="AnimationPlayer" parent="CreditsCanvasLayer"]
+root_node = NodePath("../Label")
+libraries = {
+&"": SubResource("AnimationLibrary_fkh5x")
+}
+autoplay = "default"
+
+[node name="RetryButton" type="Button" parent="CreditsCanvasLayer"]
+visible = false
+offset_left = 745.0
+offset_top = 815.0
+offset_right = 1221.0
+offset_bottom = 979.0
+theme_override_fonts/font = ExtResource("11_48xrq")
+theme_override_font_sizes/font_size = 96
+text = "Retry"
+
+[connection signal="pressed" from="CreditsCanvasLayer/RetryButton" to="CreditsCanvasLayer" method="_on_retry_button_pressed"]
