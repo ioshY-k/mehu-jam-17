@@ -6,15 +6,11 @@ func _ready() -> void:
 	interactable = get_parent()
 
 func execute_interaction():
-	print("knive is interacted with")
+	print("glasses is interacted with")
 	match GlobalStates.inventory_object_name:
 		"":
 			interactable.pick_up(interactable.obj_name)
-		"banana":
-			GlobalStates.empty_inventory()
-			GlobalStates.create_inventory_object("key")
-			$"../../InteractableBananaSlices".position = $"../../PlayerCharacter".position
-			get_parent().queue_free()
-			
+		"b_letter":
+			$"../../UICanvasLayer/Sunglasses".show()
 		
 	GlobalStates.is_interacting = false

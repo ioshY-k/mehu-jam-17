@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqk18u4xwd4i5"]
+
+[ext_resource type="Texture2D" uid="uid://7v7tjnxtgtvt" path="res://InteractableObjects/Sprites/read.png" id="1_8j83t"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fkh5x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8j83t")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="ReadSprite" type="AnimatedSprite2D"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_fkh5x")
+autoplay = "default"

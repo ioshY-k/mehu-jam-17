@@ -25,6 +25,7 @@ func execute_interaction():
 		"knive":
 			GlobalStates.empty_inventory()
 			GlobalStates.create_inventory_object("key")
+			$"../../InteractableBananaSlices".position = $"../../PlayerCharacter".position
 			get_parent().queue_free()
 		
 	GlobalStates.is_interacting = false

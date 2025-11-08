@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://b788y1phxckl6"]
+
+[ext_resource type="Texture2D" uid="uid://c2ncnypv5jm44" path="res://InteractableObjects/Sprites/Knife.png" id="1_pt4iq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pt4iq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pt4iq")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="GlassesSprite" type="AnimatedSprite2D"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_pt4iq")
+autoplay = "default"
