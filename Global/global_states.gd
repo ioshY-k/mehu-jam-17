@@ -8,7 +8,12 @@ var inventory_object_name: String = ""
 var generatable_objects = {
 	"burning_dynamite": "packed_scenes"}
 
-
+func reset_globals():
+	dynamite_is_lit = false
+	is_interacting = false
+	inventory_object_name = ""
+	await get_tree().process_frame
+	inventory = $"../MainScene/UICanvasLayer/Inventory"
 
 func empty_inventory():
 	inventory_object_name = ""

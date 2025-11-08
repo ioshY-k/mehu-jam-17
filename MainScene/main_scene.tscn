@@ -1,8 +1,7 @@
-[gd_scene load_steps=34 format=3 uid="uid://g3p186fwfy00"]
+[gd_scene load_steps=47 format=4 uid="uid://g3p186fwfy00"]
 
 [ext_resource type="Script" uid="uid://ddci1v7cvwl7b" path="res://MainScene/camera.gd" id="1_fkh5x"]
 [ext_resource type="PackedScene" uid="uid://bmolk3ejka8ve" path="res://Player/player_character.tscn" id="1_fyr3e"]
-[ext_resource type="Texture2D" uid="uid://cle2qmofmvynm" path="res://icon.svg" id="2_1lkik"]
 [ext_resource type="PackedScene" uid="uid://br0v7j8lymtfe" path="res://InteractableObjects/interactable_object_base.tscn" id="2_qjv46"]
 [ext_resource type="Texture2D" uid="uid://xfwglv31g8ay" path="res://Player/chimpo_run_sheet_v1.png" id="3_25u3m"]
 [ext_resource type="Script" uid="uid://du6toorvd0d62" path="res://InteractableObjects/interaction_match.gd" id="4_25os6"]
@@ -14,22 +13,63 @@
 [ext_resource type="Texture2D" uid="uid://c7lkqs037tg66" path="res://Player/PlayerTestSprite.svg" id="6_n13s5"]
 [ext_resource type="Script" uid="uid://jg2xsyphbnba" path="res://InteractableObjects/interaction_right_door.gd" id="7_5ltmk"]
 [ext_resource type="Texture2D" uid="uid://wibkkd7c3o4c" path="res://WhiteNoise/WhiteNoise3.png" id="7_fhqjx"]
+[ext_resource type="Texture2D" uid="uid://dsfabr5kjstsh" path="res://InteractableObjects/Sprites/Bomb_v1.png" id="8_fhqjx"]
 [ext_resource type="Texture2D" uid="uid://ddapimkwra8ky" path="res://TodoList/BlackFadeEndscreen.svg" id="9_1m37m"]
+[ext_resource type="Script" uid="uid://cfpkn6t0lguvs" path="res://InteractableObjects/interaction_banana.gd" id="9_aol1h"]
 [ext_resource type="Texture2D" uid="uid://bphckpoqh41kk" path="res://TodoList/TodoListEndscreen.svg" id="10_5ltmk"]
 [ext_resource type="Script" uid="uid://d27tt4131quhy" path="res://MainScene/end_screen.gd" id="10_48xrq"]
 [ext_resource type="FontFile" uid="uid://dn4wgyr8kg1lf" path="res://POKEMON CLASSIC.TTF" id="11_48xrq"]
 [ext_resource type="Script" uid="uid://dn388j6fatx4t" path="res://InteractableObjects/interaction_left_door.gd" id="12_g8jqs"]
 [ext_resource type="AudioStream" uid="uid://iaemxt1vvqtt" path="res://MainScene/bgmusic.wav" id="14_55fm0"]
 [ext_resource type="AudioStream" uid="uid://bbqob4j45yih5" path="res://TodoList/credits.wav" id="14_pyoqi"]
+[ext_resource type="Texture2D" uid="uid://cvik1y7v35shy" path="res://InteractableObjects/Sprites/Inventory_v1.png" id="16_vw3bk"]
+[ext_resource type="Texture2D" uid="uid://bfwyiq24ej407" path="res://InteractableObjects/Sprites/Tilemap_v2.png" id="23_aol1h"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1dx1v"]
+texture = ExtResource("23_aol1h")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_t5cxr"]
+sources/0 = SubResource("TileSetAtlasSource_1dx1v")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fkh5x"]
 animations = [{
+"frames": [],
+"loop": true,
+"name": &"banana_interaction",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("4_30i71")
 }],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_fhqjx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_30i71")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_fhqjx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_30i71")
+}],
+"loop": true,
+"name": &"match_interaction",
 "speed": 5.0
 }]
 
@@ -107,11 +147,43 @@ _data = {
 &"deathtimer": SubResource("Animation_aol1h")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_vw3bk"]
+atlas = ExtResource("8_fhqjx")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aol1h"]
+atlas = ExtResource("8_fhqjx")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1dx1v"]
+atlas = ExtResource("8_fhqjx")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5cxr"]
+atlas = ExtResource("8_fhqjx")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hbof4"]
+atlas = ExtResource("8_fhqjx")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hm72d"]
+atlas = ExtResource("8_fhqjx")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvtj6"]
+atlas = ExtResource("8_fhqjx")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_enkwa"]
+atlas = ExtResource("8_fhqjx")
+region = Rect2(96, 0, 16, 16)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_mde60"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_25u3m")
+"texture": SubResource("AtlasTexture_vw3bk")
 }],
 "loop": true,
 "name": &"default",
@@ -119,23 +191,29 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_25u3m")
+"texture": SubResource("AtlasTexture_aol1h")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_n13s5")
+"texture": SubResource("AtlasTexture_1dx1v")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_25u3m")
+"texture": SubResource("AtlasTexture_t5cxr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_n13s5")
+"texture": SubResource("AtlasTexture_hbof4")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_25u3m")
+"texture": SubResource("AtlasTexture_hm72d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wvtj6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_enkwa")
 }],
 "loop": false,
 "name": &"match_interaction",
-"speed": 5.0
+"speed": 9.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n13s5"]
@@ -174,8 +252,20 @@ animations = [{
 "name": &"explode_open",
 "speed": 5.0
 }, {
-"frames": [],
-"loop": true,
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_30i71")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_25u3m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_30i71")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_25u3m")
+}],
+"loop": false,
 "name": &"lit_dynamite_interaction",
 "speed": 5.0
 }, {
@@ -189,8 +279,13 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("3_25u3m")
 }],
+"loop": false,
+"name": &"match_interaction",
+"speed": 5.0
+}, {
+"frames": [],
 "loop": true,
-"name": &"noItem_interaction",
+"name": &"new_animation",
 "speed": 5.0
 }]
 
@@ -370,23 +465,29 @@ _data = {
 
 [node name="MainScene" type="Node2D"]
 
+[node name="TileMap" type="TileMapLayer" parent="."]
+texture_filter = 1
+scale = Vector2(8, 8)
+tile_map_data = PackedByteArray("AAABAP7/AAABAAEAAAAAAP7/AAABAAEAAAD///7/AAABAAEAAAD+//7/AAABAAEAAAD9//7/AAABAAEAAAD9////AAABAAEAAAAAAP//AAABAAEAAAABAP//AAABAAEAAAD/////AAABAAEAAAD+////AAABAAEAAAD9/wAAAAABAAEAAAD+/wAAAAABAAEAAAD//wAAAAABAAEAAAAAAAAAAAABAAEAAAABAAAAAAABAAEAAAABAAEAAAABAAEAAAAAAAEAAAABAAEAAAD//wEAAAABAAEAAAD+/wEAAAABAAEAAAD9/wEAAAABAAEAAAD+/wIAAAABAAIAAAD//wIAAAABAAIAAAAAAAIAAAABAAIAAAABAAIAAAABAAIAAAD+//3/AAABAAAAAAD///3/AAABAAAAAAAAAP3/AAABAAAAAAABAP3/AAABAAAAAAD9/wIAAAABAAIAAAD9//3/AAABAAAAAAD6//3/AAAAAAAAAAD6//7/AAAAAAEAAAD6////AAAAAAEAAAD6/wAAAAAAAAEAAAD6/wEAAAAAAAEAAAD6/wIAAAAAAAIAAAD7//3/AAABAAAAAAD7//7/AAABAAEAAAD7////AAABAAEAAAD7/wAAAAABAAEAAAD7/wEAAAABAAEAAAD7/wIAAAABAAIAAAD8//3/AAABAAAAAAD8//7/AAABAAEAAAD8////AAABAAEAAAD8/wAAAAABAAEAAAD8/wEAAAABAAEAAAD8/wIAAAABAAIAAAACAP3/AAABAAAAAAACAP7/AAABAAEAAAACAP//AAABAAEAAAACAAAAAAABAAEAAAACAAEAAAABAAEAAAACAAIAAAABAAIAAAADAP3/AAABAAAAAAADAP7/AAABAAEAAAADAP//AAABAAEAAAADAAAAAAABAAEAAAADAAEAAAABAAEAAAADAAIAAAABAAIAAAAEAP3/AAABAAAAAAAEAP7/AAABAAEAAAAEAP//AAABAAEAAAAEAAAAAAABAAEAAAAEAAEAAAABAAEAAAAEAAIAAAABAAIAAAAFAP3/AAACAAAAAAAFAP7/AAACAAEAAAAFAP//AAACAAEAAAAFAAAAAAACAAEAAAAFAAEAAAACAAEAAAAFAAIAAAACAAIAAAA=")
+tile_set = SubResource("TileSet_t5cxr")
+
 [node name="Camera2D" type="Camera2D" parent="." groups=["Camera"]]
 texture_filter = 1
 script = ExtResource("1_fkh5x")
 
 [node name="InteractableMatch" parent="." instance=ExtResource("2_qjv46")]
-position = Vector2(251, 211)
+position = Vector2(272, 162)
 is_pickup = true
 obj_name = "match"
 
 [node name="WalkPosition" type="Node2D" parent="InteractableMatch"]
-position = Vector2(0, 15)
+position = Vector2(-0.5, -12.875)
 
 [node name="Sprite" type="AnimatedSprite2D" parent="InteractableMatch"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_fkh5x")
+animation = &"banana_interaction"
 autoplay = "default"
-frame_progress = 0.17069417
 script = ExtResource("4_25os6")
 
 [node name="Deatheffect" type="AnimatedSprite2D" parent="InteractableMatch/Sprite"]
@@ -401,26 +502,41 @@ libraries = {
 &"": SubResource("AnimationLibrary_t5cxr")
 }
 
+[node name="InteractableBanana" parent="." instance=ExtResource("2_qjv46")]
+position = Vector2(-415, 165)
+is_pickup = true
+obj_name = "banana"
+
+[node name="WalkPosition" type="Node2D" parent="InteractableBanana"]
+position = Vector2(-0.5, -12.875)
+
+[node name="Sprite" type="AnimatedSprite2D" parent="InteractableBanana"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_fkh5x")
+autoplay = "default"
+script = ExtResource("9_aol1h")
+
 [node name="InteractableDynamite" parent="." instance=ExtResource("2_qjv46")]
-position = Vector2(173, -408)
+position = Vector2(233, -240)
 is_pickup = true
 obj_name = "dynamite"
 
 [node name="WalkPosition" type="Node2D" parent="InteractableDynamite"]
-position = Vector2(-1, -20)
+position = Vector2(-0.625, 14.375)
 
 [node name="Sprite" type="AnimatedSprite2D" parent="InteractableDynamite"]
 texture_filter = 1
+position = Vector2(-0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_mde60")
 animation = &"match_interaction"
 autoplay = "default"
-flip_h = true
-flip_v = true
+frame = 4
+frame_progress = 0.7096272
 script = ExtResource("4_ga7gg")
 
 [node name="InteractableTopDoor" parent="." instance=ExtResource("2_qjv46")]
-position = Vector2(11, -497)
-obj_name = "door"
+position = Vector2(12, -297)
+obj_name = "top_door"
 
 [node name="WalkPosition" type="Node2D" parent="InteractableTopDoor"]
 position = Vector2(-0.875, 14.25)
@@ -434,16 +550,16 @@ flip_v = true
 script = ExtResource("4_r4p44")
 
 [node name="InteractableLeftDoor" parent="." instance=ExtResource("2_qjv46")]
-position = Vector2(11, -497)
-obj_name = "door"
+position = Vector2(-671, -7)
+obj_name = "left_door"
 
 [node name="WalkPosition" type="Node2D" parent="InteractableLeftDoor"]
-position = Vector2(-0.875, 14.25)
+position = Vector2(17.375, 0.125)
 
 [node name="Sprite" type="AnimatedSprite2D" parent="InteractableLeftDoor"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_n13s5")
-animation = &"explode_open"
+animation = &"match_interaction"
 autoplay = "default"
 flip_h = true
 flip_v = true
@@ -451,7 +567,7 @@ script = ExtResource("12_g8jqs")
 
 [node name="InteractableRightDoor" parent="." instance=ExtResource("2_qjv46")]
 position = Vector2(940, -4)
-obj_name = "door"
+obj_name = "right_door"
 
 [node name="WalkPosition" type="Node2D" parent="InteractableRightDoor"]
 position = Vector2(-14.375, 0.75)
@@ -468,11 +584,12 @@ script = ExtResource("7_5ltmk")
 position = Vector2(-196, -3)
 
 [node name="UICanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="Inventory" type="Sprite2D" parent="UICanvasLayer" groups=["Inventory"]]
+texture_filter = 1
 position = Vector2(1789, 966)
-texture = ExtResource("2_1lkik")
+scale = Vector2(8, 8)
+texture = ExtResource("16_vw3bk")
 
 [node name="CreditsCanvasLayer" type="CanvasLayer" parent="."]
 visible = false

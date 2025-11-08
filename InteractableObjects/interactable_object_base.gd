@@ -61,23 +61,26 @@ func pick_up(obj_name):
 	image.scale = Vector2(8,8)
 	queue_free()
 
+func no_longer_interactable():
+	$Area2D.queue_free()
+
 func switch_room(direction: int):
 	var tween = create_tween()
 	match direction:
 		Consts.DIRECTIONS.UP:
 			tween.set_trans(Tween.TRANS_LINEAR)
-			tween.tween_property(player,"position:y", player.position.y-300, Consts.player_walk_speed)
+			tween.tween_property(player,"position:y", player.position.y-900, Consts.player_walk_speed)
 			tween.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
 			tween.tween_property(camera, "position:y", camera.position.y-1080, 1)
 		Consts.DIRECTIONS.RIGHT:
 			tween.set_trans(Tween.TRANS_LINEAR)
-			tween.tween_property(player,"position:x", player.position.x+300, Consts.player_walk_speed)
+			tween.tween_property(player,"position:x", player.position.x+900, Consts.player_walk_speed)
 			tween.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
 			tween.tween_property(camera, "position:x", camera.position.x+1920, 1)
 		Consts.DIRECTIONS.DOWN:
 			pass
 		Consts.DIRECTIONS.LEFT:
 			tween.set_trans(Tween.TRANS_LINEAR)
-			tween.tween_property(player,"position:x", player.position.x-300, Consts.player_walk_speed)
+			tween.tween_property(player,"position:x", player.position.x-900, Consts.player_walk_speed)
 			tween.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
 			tween.tween_property(camera, "position:x", camera.position.x-1920, 1)
