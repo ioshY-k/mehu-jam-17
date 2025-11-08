@@ -1,6 +1,6 @@
-extends Sprite2D
+extends AnimatedSprite2D
 
-var open = true
+var open = false
 var interactable: InteractableBase
 
 func _ready() -> void:
@@ -9,6 +9,6 @@ func _ready() -> void:
 func execute_interaction():
 	print("top door is interacted with")
 	if open:
-		interactable.switch_room(GlobalStates.DIRECTIONS.UP)
+		interactable.switch_room(Consts.DIRECTIONS.UP)
 		
 	GlobalStates.is_interacting = false

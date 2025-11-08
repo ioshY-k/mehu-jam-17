@@ -1,8 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://bmolk3ejka8ve"]
+[gd_scene load_steps=14 format=3 uid="uid://bmolk3ejka8ve"]
 
 [ext_resource type="Texture2D" uid="uid://c7lkqs037tg66" path="res://Player/PlayerTestSprite.svg" id="1_dfy8k"]
 [ext_resource type="Script" uid="uid://cpg3vg8adjjn4" path="res://Player/player_character.gd" id="2_5cwa8"]
 [ext_resource type="FontFile" uid="uid://dn4wgyr8kg1lf" path="res://POKEMON CLASSIC.TTF" id="3_a5bt4"]
+[ext_resource type="AudioStream" uid="uid://bane4pf47br7i" path="res://Player/step1.wav" id="4_36np3"]
+[ext_resource type="AudioStream" uid="uid://dykofynoc6j55" path="res://Player/step2.wav" id="5_5j3b7"]
+[ext_resource type="AudioStream" uid="uid://818sydrwlhtv" path="res://Player/step3.wav" id="6_gqsy7"]
+[ext_resource type="AudioStream" uid="uid://u44bj2vg233a" path="res://Player/step4.wav" id="7_3yrp4"]
+[ext_resource type="AudioStream" uid="uid://te7bmb1olpn" path="res://Player/Step5.wav" id="8_g1ssd"]
+[ext_resource type="AudioStream" uid="uid://vrcp86aw547g" path="res://Player/step6.wav" id="9_g61ia"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5cwa8"]
 animations = [{
@@ -80,3 +86,21 @@ libraries = {
 &"": SubResource("AnimationLibrary_qyuka")
 }
 autoplay = "Wave"
+
+[node name="StepSound1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_36np3")
+
+[node name="StepSound2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_5j3b7")
+
+[node name="StepSound3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_gqsy7")
+
+[node name="StepSound4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_3yrp4")
+
+[node name="StepSound5" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_g1ssd")
+
+[node name="StepSound6" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_g61ia")

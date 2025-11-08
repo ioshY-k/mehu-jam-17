@@ -1,4 +1,4 @@
-extends Sprite2D
+extends AnimatedSprite2D
 
 var interactable: InteractableBase
 
@@ -12,6 +12,14 @@ func execute_interaction():
 			interactable.pick_up(interactable.obj_name)
 		"match":
 			print("light dynamite")
-			GlobalStates.inventory_object_name = ""
+			GlobalStates.empty_inventory()
+			play("match_interaction")
+			await animation_finished
+			$"../../InteractableTopDoor/Sprite".play("explode_open")
+			$"../../InteractableTopDoor/Sprite".open = true
+			print($"../../InteractableTopDoor/Sprite".open)
+			get_parent().queue_free()
+
+			
 		
 	GlobalStates.is_interacting = false

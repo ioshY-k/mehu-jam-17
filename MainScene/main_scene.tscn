@@ -1,24 +1,187 @@
-[gd_scene load_steps=19 format=3 uid="uid://g3p186fwfy00"]
+[gd_scene load_steps=33 format=3 uid="uid://g3p186fwfy00"]
 
+[ext_resource type="Script" uid="uid://ddci1v7cvwl7b" path="res://MainScene/camera.gd" id="1_fkh5x"]
 [ext_resource type="PackedScene" uid="uid://bmolk3ejka8ve" path="res://Player/player_character.tscn" id="1_fyr3e"]
 [ext_resource type="Texture2D" uid="uid://cle2qmofmvynm" path="res://icon.svg" id="2_1lkik"]
 [ext_resource type="PackedScene" uid="uid://br0v7j8lymtfe" path="res://InteractableObjects/interactable_object_base.tscn" id="2_qjv46"]
 [ext_resource type="Texture2D" uid="uid://xfwglv31g8ay" path="res://Player/chimpo_run_sheet_v1.png" id="3_25u3m"]
 [ext_resource type="Script" uid="uid://du6toorvd0d62" path="res://InteractableObjects/interaction_match.gd" id="4_25os6"]
-[ext_resource type="Texture2D" uid="uid://b6ob8604dup3x" path="res://InteractableObjects/Match.svg" id="4_30i71"]
+[ext_resource type="Texture2D" uid="uid://b6ob8604dup3x" path="res://InteractableObjects/Sprites/Match.svg" id="4_30i71"]
 [ext_resource type="Script" uid="uid://dmpgnpeaejogj" path="res://InteractableObjects/interaction_dynamite.gd" id="4_ga7gg"]
 [ext_resource type="Script" uid="uid://c8s6r3524bjmi" path="res://InteractableObjects/interaction_top_door.gd" id="4_r4p44"]
+[ext_resource type="Texture2D" uid="uid://7m7os3vly3c" path="res://WhiteNoise/WhiteNoise1.png" id="5_6tl0i"]
+[ext_resource type="Texture2D" uid="uid://b631qve628k1q" path="res://WhiteNoise/WhiteNoise2.png" id="6_g8jqs"]
+[ext_resource type="Texture2D" uid="uid://c7lkqs037tg66" path="res://Player/PlayerTestSprite.svg" id="6_n13s5"]
 [ext_resource type="Script" uid="uid://jg2xsyphbnba" path="res://InteractableObjects/interaction_right_door.gd" id="7_5ltmk"]
+[ext_resource type="Texture2D" uid="uid://wibkkd7c3o4c" path="res://WhiteNoise/WhiteNoise3.png" id="7_fhqjx"]
 [ext_resource type="Texture2D" uid="uid://ddapimkwra8ky" path="res://TodoList/BlackFadeEndscreen.svg" id="9_1m37m"]
 [ext_resource type="Texture2D" uid="uid://bphckpoqh41kk" path="res://TodoList/TodoListEndscreen.svg" id="10_5ltmk"]
 [ext_resource type="Script" uid="uid://d27tt4131quhy" path="res://MainScene/end_screen.gd" id="10_48xrq"]
 [ext_resource type="FontFile" uid="uid://dn4wgyr8kg1lf" path="res://POKEMON CLASSIC.TTF" id="11_48xrq"]
+[ext_resource type="AudioStream" uid="uid://iaemxt1vvqtt" path="res://MainScene/bgmusic.wav" id="14_55fm0"]
+[ext_resource type="AudioStream" uid="uid://bbqob4j45yih5" path="res://TodoList/credits.wav" id="14_pyoqi"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ji2x1"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_fkh5x"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_30i71")
+}],
 "loop": true,
-"name": &"InteractableObjects",
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vw3bk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_6tl0i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_g8jqs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fhqjx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_g8jqs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fhqjx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_6tl0i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fhqjx")
+}],
+"loop": true,
+"name": &"deathtimer",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_1dx1v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_aol1h"]
+resource_name = "deathtimer"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.33333334),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t5cxr"]
+_data = {
+&"RESET": SubResource("Animation_1dx1v"),
+&"deathtimer": SubResource("Animation_aol1h")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mde60"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_25u3m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_25u3m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_n13s5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_25u3m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_n13s5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_25u3m")
+}],
+"loop": false,
+"name": &"match_interaction",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n13s5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_25u3m")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_25u3m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_n13s5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_25u3m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_n13s5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_25u3m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_n13s5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_25u3m")
+}],
+"loop": false,
+"name": &"explode_open",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7qhia"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_25u3m")
+}],
+"loop": true,
+"name": &"default",
 "speed": 5.0
 }]
 
@@ -189,36 +352,50 @@ _data = {
 
 [node name="Camera2D" type="Camera2D" parent="." groups=["Camera"]]
 texture_filter = 1
+script = ExtResource("1_fkh5x")
 
 [node name="InteractableMatch" parent="." instance=ExtResource("2_qjv46")]
-position = Vector2(616, -225)
+position = Vector2(251, 211)
 is_pickup = true
 obj_name = "match"
 
 [node name="WalkPosition" type="Node2D" parent="InteractableMatch"]
 position = Vector2(0, 15)
 
-[node name="Sprite" type="Sprite2D" parent="InteractableMatch"]
+[node name="Sprite" type="AnimatedSprite2D" parent="InteractableMatch"]
 texture_filter = 1
-texture = ExtResource("4_30i71")
-region_rect = Rect2(0, 0, 16, 16)
+sprite_frames = SubResource("SpriteFrames_fkh5x")
+autoplay = "default"
+frame_progress = 0.17069417
 script = ExtResource("4_25os6")
 
+[node name="Deatheffect" type="AnimatedSprite2D" parent="InteractableMatch/Sprite"]
+z_index = 10
+position = Vector2(-19.625, -37.875)
+scale = Vector2(0.56, 0.56)
+sprite_frames = SubResource("SpriteFrames_vw3bk")
+autoplay = "default"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="InteractableMatch/Sprite/Deatheffect"]
+libraries = {
+&"": SubResource("AnimationLibrary_t5cxr")
+}
+
 [node name="InteractableDynamite" parent="." instance=ExtResource("2_qjv46")]
-position = Vector2(366, 293)
+position = Vector2(173, -408)
 is_pickup = true
 obj_name = "dynamite"
 
 [node name="WalkPosition" type="Node2D" parent="InteractableDynamite"]
 position = Vector2(-1, -20)
 
-[node name="Sprite" type="Sprite2D" parent="InteractableDynamite"]
+[node name="Sprite" type="AnimatedSprite2D" parent="InteractableDynamite"]
 texture_filter = 1
-texture = ExtResource("3_25u3m")
+sprite_frames = SubResource("SpriteFrames_mde60")
+animation = &"match_interaction"
+autoplay = "default"
 flip_h = true
 flip_v = true
-region_enabled = true
-region_rect = Rect2(0, 0, 16, 16)
 script = ExtResource("4_ga7gg")
 
 [node name="InteractableTopDoor" parent="." instance=ExtResource("2_qjv46")]
@@ -228,13 +405,12 @@ obj_name = "door"
 [node name="WalkPosition" type="Node2D" parent="InteractableTopDoor"]
 position = Vector2(-0.875, 14.25)
 
-[node name="Sprite" type="Sprite2D" parent="InteractableTopDoor"]
+[node name="Sprite" type="AnimatedSprite2D" parent="InteractableTopDoor"]
 texture_filter = 1
-texture = ExtResource("3_25u3m")
+sprite_frames = SubResource("SpriteFrames_n13s5")
+autoplay = "default"
 flip_h = true
 flip_v = true
-region_enabled = true
-region_rect = Rect2(0, 0, 16, 16)
 script = ExtResource("4_r4p44")
 
 [node name="InteractableRightDoor" parent="." instance=ExtResource("2_qjv46")]
@@ -244,29 +420,26 @@ obj_name = "door"
 [node name="WalkPosition" type="Node2D" parent="InteractableRightDoor"]
 position = Vector2(-14.375, 0.75)
 
-[node name="Sprite" type="Sprite2D" parent="InteractableRightDoor"]
+[node name="Sprite" type="AnimatedSprite2D" parent="InteractableRightDoor"]
 texture_filter = 1
-texture = ExtResource("3_25u3m")
+sprite_frames = SubResource("SpriteFrames_7qhia")
+autoplay = "default"
 flip_h = true
 flip_v = true
-region_enabled = true
-region_rect = Rect2(0, 0, 16, 16)
 script = ExtResource("7_5ltmk")
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("1_fyr3e")]
 position = Vector2(-196, -3)
 
 [node name="UICanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Inventory" type="Sprite2D" parent="UICanvasLayer" groups=["Inventory"]]
 position = Vector2(1789, 966)
 texture = ExtResource("2_1lkik")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="UICanvasLayer/Inventory"]
-sprite_frames = SubResource("SpriteFrames_ji2x1")
-animation = &"InteractableObjects"
-
 [node name="CreditsCanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource("10_48xrq")
 
 [node name="BlackFade" type="Sprite2D" parent="CreditsCanvasLayer"]
@@ -340,5 +513,13 @@ offset_bottom = 979.0
 theme_override_fonts/font = ExtResource("11_48xrq")
 theme_override_font_sizes/font_size = 96
 text = "Retry"
+
+[node name="CreditMusic" type="AudioStreamPlayer" parent="CreditsCanvasLayer"]
+stream = ExtResource("14_pyoqi")
+volume_db = -19.086
+
+[node name="BGMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_55fm0")
+autoplay = true
 
 [connection signal="pressed" from="CreditsCanvasLayer/RetryButton" to="CreditsCanvasLayer" method="_on_retry_button_pressed"]

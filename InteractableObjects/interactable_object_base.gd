@@ -7,7 +7,7 @@ var hovered: bool = false
 var walk_position: Node2D
 var player: Player
 var inventory
-var image: Sprite2D
+var image: AnimatedSprite2D
 var camera: Camera2D
 
 func _ready():
@@ -64,17 +64,17 @@ func pick_up(obj_name):
 func switch_room(direction: int):
 	var tween = create_tween()
 	match direction:
-		GlobalStates.DIRECTIONS.UP:
+		Consts.DIRECTIONS.UP:
 			tween.set_trans(Tween.TRANS_LINEAR)
-			tween.tween_property(player,"position:y", player.position.y-300, 0.5)
+			tween.tween_property(player,"position:y", player.position.y-300, Consts.player_walk_speed)
 			tween.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
 			tween.tween_property(camera, "position:y", camera.position.y-1080, 1)
-		GlobalStates.DIRECTIONS.RIGHT:
+		Consts.DIRECTIONS.RIGHT:
 			tween.set_trans(Tween.TRANS_LINEAR)
-			tween.tween_property(player,"position:x", player.position.x+300, 0.5)
+			tween.tween_property(player,"position:x", player.position.x+300, Consts.player_walk_speed)
 			tween.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
 			tween.tween_property(camera, "position:x", camera.position.x+1920, 1)
-		GlobalStates.DIRECTIONS.DOWN:
+		Consts.DIRECTIONS.DOWN:
 			pass
-		GlobalStates.DIRECTIONS.LEFT:
+		Consts.DIRECTIONS.LEFT:
 			pass
