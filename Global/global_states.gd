@@ -22,7 +22,7 @@ func reset_globals():
 	is_interacting = false
 	inventory_object_name = ""
 	await get_tree().process_frame
-	inventory = $"../MainScene/UICanvasLayer/Inventory"
+	inventory = get_tree().get_first_node_in_group("Inventory")
 
 func empty_inventory():
 	if inventory == null:

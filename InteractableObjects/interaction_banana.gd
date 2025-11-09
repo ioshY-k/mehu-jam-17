@@ -28,5 +28,7 @@ func execute_interaction():
 			GlobalStates.create_inventory_object("key")
 			$"../../InteractableBananaSlices".position = $"../../PlayerCharacter".position
 			get_parent().queue_free()
+		_:
+			$"../../Default".play()
 		
 	GlobalStates.is_interacting = false

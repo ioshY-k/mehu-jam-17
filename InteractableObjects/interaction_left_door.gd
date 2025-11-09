@@ -20,19 +20,22 @@ func execute_interaction():
 					$"../../Deatheffect".queue_free()
 					$"../../InteractableMatch/BombInPocket".stop()
 					GlobalStates.dynamite_is_lit = false
-					play("lit_dynamite_interaction")
-					await animation_finished
+					$"../EatNoise".play()
+					await $"../EatNoise".finished
 					play("explode_open")
 					open = true
 					$"../../CreditsCanvasLayer/CheckList/ChackemarkMonkey".show()
 				else:
-					print("candle want lit dialogue")
+					$"../LightCandles".play()
+					$"../../UICanvasLayer/TalkingGorilla".play("talk")
 			"match":
 				play("match_interaction")
+				interactable.no_longer_interactable()
+				GlobalStates.empty_inventory()
 				$"../../CreditsCanvasLayer/CheckList/ChackemarkMonkey".show()
 			"banana":
 				GlobalStates.empty_inventory()
-				play("eat_banana_interaction")
+				$"../EatNoise".play()
 				interactable.no_longer_interactable()
 				$"../../CreditsCanvasLayer/CheckList/ChackemarkMonkey".show()
 			"banana bomb":
@@ -41,13 +44,15 @@ func execute_interaction():
 					$"../../Deatheffect".queue_free()
 					$"../../InteractableMatch/BombInPocket".stop()
 					GlobalStates.banana_bomb_is_lit = false
-					play("lit_banana_bomb_interaction")
-					await animation_finished
+					$"../EatNoise".play()
+					await $"../EatNoise".finished
 					play("explode_open")
 					open = true
 					$"../../CreditsCanvasLayer/CheckList/ChackemarkMonkey".show()
 				else:
-					print("banana candle want lit dialogue")
-				
+					$"../LightCandles".play()
+					$"../../UICanvasLayer/TalkingGorilla".play("talk")
+			_:
+				$"../../Default".play()
 		
 	GlobalStates.is_interacting = false

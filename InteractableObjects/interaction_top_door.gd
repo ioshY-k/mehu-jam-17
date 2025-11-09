@@ -16,6 +16,7 @@ func execute_interaction():
 				open = true
 				play("key_interaction")
 			_:
-				print("you need a key action")
+				$"../DoorAndKey".play()
+				$"../../UICanvasLayer/TalkingGorilla".play("talk")
 		
 	GlobalStates.is_interacting = false

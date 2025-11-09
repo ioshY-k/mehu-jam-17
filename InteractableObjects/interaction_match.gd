@@ -18,7 +18,7 @@ func execute_interaction():
 			hide()
 			GlobalStates.dynamite_is_lit = true
 			
-			GlobalStates.inventory.get_child(0).play("match_interaction")
+			$"../../UICanvasLayer/Inventory".get_child(0).play("match_interaction")
 			animation_player.play("deathtimer")
 			$"../BombInPocket".play()
 			$"../../UICanvasLayer/TalkingGorilla".play("talk")
@@ -38,7 +38,7 @@ func execute_interaction():
 			hide()
 			GlobalStates.banana_bomb_is_lit = true
 			
-			GlobalStates.inventory.get_child(0).play("match_interaction")
+			$"../../UICanvasLayer/Inventory".get_child(0).play("match_interaction")
 			animation_player.play("deathtimer")
 			$"../BombInPocket".play()
 			
@@ -47,6 +47,8 @@ func execute_interaction():
 			await animation_player.animation_finished
 			if GlobalStates.banana_bomb_is_lit:
 				GlobalStates.reset_globals()
+		_:
+			$"../../Default".play()
 			
 		
 	GlobalStates.is_interacting = false
