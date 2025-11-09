@@ -23,6 +23,7 @@ func execute_interaction():
 			GlobalStates.create_inventory_object("banana bomb")
 			get_parent().queue_free()
 		"knive":
+			$"../../CreditsCanvasLayer/CheckList/ChackemarkBanana".show()
 			GlobalStates.empty_inventory()
 			GlobalStates.create_inventory_object("key")
 			$"../../InteractableBananaSlices".position = $"../../PlayerCharacter".position

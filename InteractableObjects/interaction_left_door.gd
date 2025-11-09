@@ -17,27 +17,35 @@ func execute_interaction():
 			"dynamite":
 				if GlobalStates.dynamite_is_lit:
 					GlobalStates.empty_inventory()
+					$"../../Deatheffect".queue_free()
+					$"../../InteractableMatch/BombInPocket".stop()
 					GlobalStates.dynamite_is_lit = false
 					play("lit_dynamite_interaction")
 					await animation_finished
 					play("explode_open")
 					open = true
+					$"../../CreditsCanvasLayer/CheckList/ChackemarkMonkey".show()
 				else:
 					print("candle want lit dialogue")
 			"match":
 				play("match_interaction")
+				$"../../CreditsCanvasLayer/CheckList/ChackemarkMonkey".show()
 			"banana":
 				GlobalStates.empty_inventory()
 				play("eat_banana_interaction")
 				interactable.no_longer_interactable()
+				$"../../CreditsCanvasLayer/CheckList/ChackemarkMonkey".show()
 			"banana bomb":
 				if GlobalStates.banana_bomb_is_lit:
 					GlobalStates.empty_inventory()
+					$"../../Deatheffect".queue_free()
+					$"../../InteractableMatch/BombInPocket".stop()
 					GlobalStates.banana_bomb_is_lit = false
 					play("lit_banana_bomb_interaction")
 					await animation_finished
 					play("explode_open")
 					open = true
+					$"../../CreditsCanvasLayer/CheckList/ChackemarkMonkey".show()
 				else:
 					print("banana candle want lit dialogue")
 				

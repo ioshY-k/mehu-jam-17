@@ -11,6 +11,8 @@ func execute_interaction():
 		"":
 			play("default_interaction")
 		"bread":
+			$"../../CreditsCanvasLayer/CheckList/ChackemarkBread".show()
 			$"../../BananaBread".position = $"../../PlayerCharacter".position
+			get_parent().queue_free()
 	
 	GlobalStates.is_interacting = false

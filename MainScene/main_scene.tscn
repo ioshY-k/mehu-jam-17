@@ -1,4 +1,4 @@
-[gd_scene load_steps=105 format=4 uid="uid://g3p186fwfy00"]
+[gd_scene load_steps=115 format=4 uid="uid://g3p186fwfy00"]
 
 [ext_resource type="Script" uid="uid://ddci1v7cvwl7b" path="res://MainScene/camera.gd" id="1_fkh5x"]
 [ext_resource type="PackedScene" uid="uid://bmolk3ejka8ve" path="res://Player/player_character.tscn" id="1_fyr3e"]
@@ -17,8 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://o0ko7g3jlpsy" path="res://InteractableObjects/Sprites/Banana.png" id="7_hm72d"]
 [ext_resource type="Texture2D" uid="uid://dsfabr5kjstsh" path="res://InteractableObjects/Sprites/Bomb_v1.png" id="8_fhqjx"]
 [ext_resource type="Texture2D" uid="uid://ddapimkwra8ky" path="res://TodoList/BlackFadeEndscreen.svg" id="9_1m37m"]
+[ext_resource type="AudioStream" uid="uid://b3adkug8wqu5a" path="res://InteractableObjects/Sounds/bomb_in_pocket.wav" id="9_3fq07"]
 [ext_resource type="Script" uid="uid://cfpkn6t0lguvs" path="res://InteractableObjects/interaction_banana.gd" id="9_aol1h"]
-[ext_resource type="Texture2D" uid="uid://bphckpoqh41kk" path="res://TodoList/TodoListEndscreen.svg" id="10_5ltmk"]
 [ext_resource type="Script" uid="uid://d27tt4131quhy" path="res://MainScene/end_screen.gd" id="10_48xrq"]
 [ext_resource type="FontFile" uid="uid://dn4wgyr8kg1lf" path="res://POKEMON CLASSIC.TTF" id="11_48xrq"]
 [ext_resource type="Script" uid="uid://dn388j6fatx4t" path="res://InteractableObjects/interaction_left_door.gd" id="12_g8jqs"]
@@ -27,16 +27,23 @@
 [ext_resource type="Script" uid="uid://laiag1d2q2r2" path="res://InteractableObjects/interaction_knive.gd" id="13_wvtj6"]
 [ext_resource type="Script" uid="uid://c765vovo0qfmv" path="res://InteractableObjects/interaction_banana_slices.gd" id="13_yhuqc"]
 [ext_resource type="AudioStream" uid="uid://iaemxt1vvqtt" path="res://MainScene/bgmusic.wav" id="14_55fm0"]
+[ext_resource type="Texture2D" uid="uid://dmwirhahrgo5w" path="res://InteractableObjects/Sprites/Bananaslices.png" id="14_ag5k3"]
 [ext_resource type="Texture2D" uid="uid://bx6jmwsgkhsx7" path="res://InteractableObjects/Sprites/Gorilla.png" id="14_hbof4"]
 [ext_resource type="AudioStream" uid="uid://bbqob4j45yih5" path="res://TodoList/credits.wav" id="14_pyoqi"]
 [ext_resource type="Script" uid="uid://crqsoc63uekfx" path="res://InteractableObjects/interaction_glasses.gd" id="16_8is5o"]
 [ext_resource type="Texture2D" uid="uid://cvik1y7v35shy" path="res://InteractableObjects/Sprites/Inventory_v1.png" id="16_vw3bk"]
 [ext_resource type="Texture2D" uid="uid://xthvocmxtou4" path="res://InteractableObjects/Sprites/B.png" id="17_uk4g7"]
+[ext_resource type="AudioStream" uid="uid://c0l21273k3x0q" path="res://InteractableObjects/Sounds/b_read.wav" id="18_8td7h"]
 [ext_resource type="Script" uid="uid://brhjyfj1w10ji" path="res://InteractableObjects/interaction_b.gd" id="18_ffk8d"]
 [ext_resource type="Script" uid="uid://c8s6r3524bjmi" path="res://InteractableObjects/interaction_top_door.gd" id="20_36glv"]
+[ext_resource type="Texture2D" uid="uid://c13ay4jvrv714" path="res://InteractableObjects/Sprites/Glasses.png" id="20_vkmed"]
 [ext_resource type="Texture2D" uid="uid://d3lavq4pmbsi4" path="res://InteractableObjects/Sprites/Door.png" id="22_uk4g7"]
 [ext_resource type="Texture2D" uid="uid://bfwyiq24ej407" path="res://InteractableObjects/Sprites/Tilemap_v2.png" id="23_aol1h"]
 [ext_resource type="Texture2D" uid="uid://cky3mjmn2ij4w" path="res://InteractableObjects/Sprites/SunGlasses.png" id="31_ffk8d"]
+[ext_resource type="Texture2D" uid="uid://pdgac8kt32m7" path="res://InteractableObjects/Sprites/Gorilla_talk.png" id="31_wek03"]
+[ext_resource type="Texture2D" uid="uid://ctuv0a08r7dsq" path="res://TodoList/TodoListEndscreen.png" id="34_ffk8d"]
+[ext_resource type="Texture2D" uid="uid://dssqblfxsjnh3" path="res://InteractableObjects/checkmark.png" id="39_vkmed"]
+[ext_resource type="Texture2D" uid="uid://bsvp71vytvwp0" path="res://InteractableObjects/Sprites/Bananabread.png" id="39_wek03"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1dx1v"]
 texture = ExtResource("23_aol1h")
@@ -112,80 +119,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_vw3bk"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_6tl0i")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_g8jqs")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_fhqjx")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_g8jqs")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_fhqjx")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_6tl0i")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_fhqjx")
-}],
-"loop": true,
-"name": &"deathtimer",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": null
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="Animation" id="Animation_1dx1v"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_aol1h"]
-resource_name = "deathtimer"
-length = 10.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(-0.33333334),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_t5cxr"]
-_data = {
-&"RESET": SubResource("Animation_1dx1v"),
-&"deathtimer": SubResource("Animation_aol1h")
-}
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_36glv"]
 atlas = ExtResource("7_hm72d")
 region = Rect2(0, 0, 16, 16)
@@ -255,7 +188,7 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_hm72d")
+"texture": ExtResource("14_ag5k3")
 }],
 "loop": true,
 "name": &"default",
@@ -316,7 +249,7 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_30i71")
+"texture": ExtResource("20_vkmed")
 }],
 "loop": true,
 "name": &"default",
@@ -800,6 +733,82 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2n67"]
+atlas = ExtResource("31_wek03")
+region = Rect2(0, 0, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_axnvp"]
+atlas = ExtResource("31_wek03")
+region = Rect2(63, 0, 21, 21)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ys2f3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2n67")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_axnvp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2n67")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_axnvp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2n67")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_axnvp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2n67")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_axnvp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2n67")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_axnvp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2n67")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_axnvp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2n67")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_axnvp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2n67")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_axnvp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2n67")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_axnvp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2n67")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_axnvp")
+}],
+"loop": false,
+"name": &"talk",
+"speed": 14.0
+}]
+
 [sub_resource type="Animation" id="Animation_55fm0"]
 resource_name = "CreditRoll"
 length = 7.0
@@ -963,6 +972,99 @@ _data = {
 &"default": SubResource("Animation_5ltmk")
 }
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_vw3bk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_6tl0i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_g8jqs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fhqjx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_g8jqs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fhqjx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_6tl0i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fhqjx")
+}],
+"loop": true,
+"name": &"deathtimer",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_6tl0i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_g8jqs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fhqjx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_g8jqs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fhqjx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_6tl0i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fhqjx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_aol1h"]
+resource_name = "deathtimer"
+length = 10.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_vkmed"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t5cxr"]
+_data = {
+&"RESET": SubResource("Animation_vkmed"),
+&"deathtimer": SubResource("Animation_aol1h")
+}
+
 [node name="MainScene" type="Node2D"]
 
 [node name="Background" type="Sprite2D" parent="."]
@@ -994,17 +1096,8 @@ sprite_frames = SubResource("SpriteFrames_t5cxr")
 autoplay = "default"
 script = ExtResource("4_25os6")
 
-[node name="Deatheffect" type="AnimatedSprite2D" parent="InteractableMatch/Sprite"]
-z_index = 10
-position = Vector2(-19.625, -37.875)
-scale = Vector2(0.56, 0.56)
-sprite_frames = SubResource("SpriteFrames_vw3bk")
-autoplay = "default"
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="InteractableMatch/Sprite/Deatheffect"]
-libraries = {
-&"": SubResource("AnimationLibrary_t5cxr")
-}
+[node name="BombInPocket" type="AudioStreamPlayer" parent="InteractableMatch"]
+stream = ExtResource("9_3fq07")
 
 [node name="InteractableBanana" parent="." instance=ExtResource("2_qjv46")]
 position = Vector2(-415, 165)
@@ -1070,10 +1163,13 @@ position = Vector2(-0.875, 17.375)
 [node name="Sprite" type="AnimatedSprite2D" parent="InteractableB"]
 texture_filter = 1
 position = Vector2(0.875, -3.625)
-scale = Vector2(0.53, 0.53)
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_5y18u")
 autoplay = "default"
 script = ExtResource("18_ffk8d")
+
+[node name="b_read" type="AudioStreamPlayer" parent="InteractableB"]
+stream = ExtResource("18_8td7h")
 
 [node name="InteractableGlasses" parent="." instance=ExtResource("2_qjv46")]
 position = Vector2(-1824, 160)
@@ -1200,7 +1296,17 @@ position = Vector2(963, 502)
 scale = Vector2(1.495, 1.495)
 texture = ExtResource("31_ffk8d")
 
+[node name="TalkingGorilla" type="AnimatedSprite2D" parent="UICanvasLayer"]
+texture_filter = 1
+position = Vector2(256.00003, 116)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_ys2f3")
+animation = &"talk"
+frame = 19
+frame_progress = 1.0
+
 [node name="CreditsCanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource("10_48xrq")
 
 [node name="BlackFade" type="Sprite2D" parent="CreditsCanvasLayer"]
@@ -1256,7 +1362,37 @@ horizontal_alignment = 1
 [node name="CheckList" type="Sprite2D" parent="CreditsCanvasLayer"]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(977, 572)
-texture = ExtResource("10_5ltmk")
+texture = ExtResource("34_ffk8d")
+
+[node name="ChackemarkRead" type="Sprite2D" parent="CreditsCanvasLayer/CheckList"]
+visible = false
+position = Vector2(-233, -187)
+texture = ExtResource("39_vkmed")
+
+[node name="ChackemarkFish" type="Sprite2D" parent="CreditsCanvasLayer/CheckList"]
+visible = false
+position = Vector2(-233, -139)
+texture = ExtResource("39_vkmed")
+
+[node name="ChackemarkMonkey" type="Sprite2D" parent="CreditsCanvasLayer/CheckList"]
+visible = false
+position = Vector2(-233, -82)
+texture = ExtResource("39_vkmed")
+
+[node name="ChackemarkBanana" type="Sprite2D" parent="CreditsCanvasLayer/CheckList"]
+visible = false
+position = Vector2(-233, -35)
+texture = ExtResource("39_vkmed")
+
+[node name="ChackemarkBread" type="Sprite2D" parent="CreditsCanvasLayer/CheckList"]
+visible = false
+position = Vector2(-233, 17)
+texture = ExtResource("39_vkmed")
+
+[node name="ChackemarkAll" type="Sprite2D" parent="CreditsCanvasLayer/CheckList"]
+visible = false
+position = Vector2(-233, 70)
+texture = ExtResource("39_vkmed")
 
 [node name="CreditAnimation" type="AnimationPlayer" parent="CreditsCanvasLayer"]
 root_node = NodePath("../Label")
@@ -1283,10 +1419,23 @@ volume_db = -19.086
 texture_filter = 1
 position = Vector2(-422.99997, 1940.9998)
 scale = Vector2(6.415, 6.415)
-texture = ExtResource("12_hm72d")
+texture = ExtResource("39_wek03")
 
 [node name="BGMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_55fm0")
 autoplay = true
+
+[node name="Deatheffect" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+z_index = 10
+position = Vector2(115, -141)
+scale = Vector2(4.48, 4.48)
+sprite_frames = SubResource("SpriteFrames_vw3bk")
+autoplay = "default"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Deatheffect"]
+libraries = {
+&"": SubResource("AnimationLibrary_t5cxr")
+}
 
 [connection signal="pressed" from="CreditsCanvasLayer/RetryButton" to="CreditsCanvasLayer" method="_on_retry_button_pressed"]

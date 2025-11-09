@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dljufqjyf2h07"]
 
-[ext_resource type="Texture2D" uid="uid://c2ncnypv5jm44" path="res://InteractableObjects/Sprites/Knife.png" id="1_a48cn"]
+[ext_resource type="Texture2D" uid="uid://gs4g0vrrdaud" path="res://InteractableObjects/Sprites/Bread.png" id="1_a48cn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a48cn"]
 animations = [{
