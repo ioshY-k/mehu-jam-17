@@ -14,6 +14,13 @@ func execute_interaction():
 	print("right door is interacted with")
 	if open:
 		interactable.switch_room(Consts.DIRECTIONS.RIGHT)
+		if( $"../../CreditsCanvasLayer/CheckList/ChackemarkRead".visible and\
+		$"../../CreditsCanvasLayer/CheckList/ChackemarkFish".visible and\
+		$"../../CreditsCanvasLayer/CheckList/ChackemarkMonkey".visible and\
+		$"../../CreditsCanvasLayer/CheckList/ChackemarkBanana".visible and\
+		$"../../CreditsCanvasLayer/CheckList/ChackemarkBread".visible):
+			$"../../CreditsCanvasLayer/CheckList/ChackemarkAll".show()
+		$"../../CreditsCanvasLayer".show()
 		credit_animation.play("CreditRoll")
 		bg_music.stop()
 		credit_music.play()

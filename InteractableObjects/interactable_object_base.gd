@@ -25,7 +25,10 @@ func _process(_delta: float) -> void:
 func wobble_effect():
 	image.scale = Vector2.ZERO
 	var tween = create_tween().set_trans(Tween.TRANS_SPRING).set_ease(Tween.EASE_OUT)
-	tween.tween_property(image, "scale", Vector2(1,1), 0.3)
+	if obj_name == "b":
+		tween.tween_property(image, "scale", Vector2(0.5,0.5), 0.3)
+	else:
+		tween.tween_property(image, "scale", Vector2(1,1), 0.3)
 
 func player_walks_towards_obj_pos():
 	SignalBus.player_walk_towards.emit(walk_position.global_position)

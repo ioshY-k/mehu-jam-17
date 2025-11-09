@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cyegbm0v3al05"]
 
-[ext_resource type="Texture2D" uid="uid://7v7tjnxtgtvt" path="res://InteractableObjects/Sprites/read.png" id="1_d471r"]
+[ext_resource type="Texture2D" uid="uid://dllu16yx013rp" path="res://InteractableObjects/Sprites/B_Letter.png" id="1_d471r"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fkh5x"]
 animations = [{
@@ -17,4 +17,3 @@ animations = [{
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_fkh5x")
 autoplay = "default"
-flip_h = true

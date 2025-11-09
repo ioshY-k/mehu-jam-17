@@ -1,8 +1,8 @@
 extends AnimatedSprite2D
 
 var interactable: InteractableBase
-@onready var deatheffect: AnimatedSprite2D = $Deatheffect
-@onready var animation_player: AnimationPlayer = $Deatheffect/AnimationPlayer
+@onready var deatheffect: AnimatedSprite2D = $"../../Deatheffect"
+@onready var animation_player: AnimationPlayer = $"../../Deatheffect/AnimationPlayer"
 
 
 func _ready() -> void:
@@ -19,8 +19,9 @@ func execute_interaction():
 			GlobalStates.dynamite_is_lit = true
 			
 			GlobalStates.inventory.get_child(0).play("match_interaction")
-			deatheffect.play("deathtimer")
 			animation_player.play("deathtimer")
+			$"../BombInPocket".play()
+			$"../../UICanvasLayer/TalkingGorilla".play("talk")
 			
 			GlobalStates.is_interacting = false
 
@@ -38,8 +39,8 @@ func execute_interaction():
 			GlobalStates.banana_bomb_is_lit = true
 			
 			GlobalStates.inventory.get_child(0).play("match_interaction")
-			deatheffect.play("deathtimer")
 			animation_player.play("deathtimer")
+			$"../BombInPocket".play()
 			
 			GlobalStates.is_interacting = false
 

@@ -1,8 +1,8 @@
 [gd_scene load_steps=3 format=3 uid="uid://bgneuxavmmchk"]
 
-[ext_resource type="Texture2D" uid="uid://c2ncnypv5jm44" path="res://InteractableObjects/Sprites/Knife.png" id="1_fl37y"]
+[ext_resource type="Texture2D" uid="uid://wlact3mjbwgg" path="res://InteractableObjects/Sprites/Key.png" id="1_fl37y"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_fkh5x"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_a2dgo"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -15,5 +15,5 @@ animations = [{
 
 [node name="KeySprite" type="AnimatedSprite2D"]
 texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_fkh5x")
+sprite_frames = SubResource("SpriteFrames_a2dgo")
 autoplay = "default"

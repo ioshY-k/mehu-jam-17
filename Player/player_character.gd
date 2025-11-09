@@ -18,6 +18,7 @@ func _ready() -> void:
 func _on_player_walks_toward(obj_pos: Vector2):
 	var tween = create_tween().set_trans(Tween.TRANS_SPRING).set_ease(Tween.EASE_OUT)
 	tween.tween_property(self, "position", obj_pos, Consts.player_walk_speed)
+	$"../UICanvasLayer/TalkingGorilla".play("talk")
 	step_sounds[randi()%5].play()
 	await tween.finished
 	SignalBus.player_arrived.emit()

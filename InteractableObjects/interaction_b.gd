@@ -15,6 +15,8 @@ func execute_interaction():
 			$"../../UICanvasLayer/Sunglasses".show()
 		"read":
 			GlobalStates.empty_inventory()
+			$"../b_read".play()
+			$"../../UICanvasLayer/TalkingGorilla".play("talk")
 			GlobalStates.create_inventory_object("bread")
 		
 	GlobalStates.is_interacting = false
