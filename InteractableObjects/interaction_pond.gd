@@ -29,5 +29,11 @@ func execute_interaction():
 			GlobalStates.empty_inventory()
 			play("b_interaction")
 			$"../../CreditsCanvasLayer/CheckList/ChackemarkFish".show()
+		"banana":
+			GlobalStates.empty_inventory()
+			play("banana_interaction")
+			$"../../CreditsCanvasLayer/CheckList/ChackemarkFish".show()
 		
+		_:
+			$"../../Default".play()
 	GlobalStates.is_interacting = false

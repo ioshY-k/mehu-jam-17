@@ -13,10 +13,15 @@ func execute_interaction():
 			GlobalStates.create_inventory_object("b_letter")
 		"glasses":
 			$"../../UICanvasLayer/Sunglasses".show()
+		"banana":
+			$"../../UICanvasLayer/TalkingGorilla".play("talk")
+			$"../b_anana".play()
 		"read":
 			GlobalStates.empty_inventory()
 			$"../b_read".play()
 			$"../../UICanvasLayer/TalkingGorilla".play("talk")
 			GlobalStates.create_inventory_object("bread")
 		
+		_:
+			$"../../Default".play()
 	GlobalStates.is_interacting = false

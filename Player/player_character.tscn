@@ -15,12 +15,14 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_dfy8k")
-}, {
-"duration": 1.0,
-"texture": ExtResource("1_dfy8k")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk",
 "speed": 5.0
 }]
 
@@ -65,6 +67,7 @@ _data = {
 
 [node name="PlayerCharacter" type="AnimatedSprite2D" groups=["Player"]]
 sprite_frames = SubResource("SpriteFrames_5cwa8")
+autoplay = "default"
 script = ExtResource("2_5cwa8")
 
 [node name="Tooltip" type="Label" parent="."]

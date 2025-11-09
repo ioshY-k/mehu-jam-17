@@ -13,4 +13,6 @@ func execute_interaction():
 		"b_letter":
 			$"../../UICanvasLayer/Sunglasses".show()
 		
+		_:
+			$"../../Default".play()
 	GlobalStates.is_interacting = false

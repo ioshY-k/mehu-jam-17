@@ -17,5 +17,7 @@ func execute_interaction():
 			$"../../InteractableBananaSlices".position = $"../../PlayerCharacter".position
 			get_parent().queue_free()
 			
+		_:
+			$"../../Default".play()
 		
 	GlobalStates.is_interacting = false
