@@ -13,6 +13,7 @@ func execute_interaction():
 			GlobalStates.create_inventory_object("b_letter")
 		"glasses":
 			$"../../UICanvasLayer/Sunglasses".show()
+			GlobalStates.empty_inventory()
 		"banana":
 			$"../../UICanvasLayer/TalkingGorilla".play("talk")
 			$"../b_anana".play()

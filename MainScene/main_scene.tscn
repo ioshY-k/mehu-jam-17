@@ -1,4 +1,4 @@
-[gd_scene load_steps=159 format=4 uid="uid://g3p186fwfy00"]
+[gd_scene load_steps=173 format=4 uid="uid://g3p186fwfy00"]
 
 [ext_resource type="Script" uid="uid://ddci1v7cvwl7b" path="res://MainScene/camera.gd" id="1_fkh5x"]
 [ext_resource type="PackedScene" uid="uid://bmolk3ejka8ve" path="res://Player/player_character.tscn" id="1_fyr3e"]
@@ -9,16 +9,23 @@
 [ext_resource type="Texture2D" uid="uid://b6ob8604dup3x" path="res://InteractableObjects/Sprites/Match.svg" id="4_30i71"]
 [ext_resource type="Texture2D" uid="uid://mw5voiag5qt" path="res://InteractableObjects/Sprites/Pond.png" id="4_emqg4"]
 [ext_resource type="Script" uid="uid://dmpgnpeaejogj" path="res://InteractableObjects/interaction_dynamite.gd" id="4_ga7gg"]
+[ext_resource type="Shader" uid="uid://bjjcurgxb1s2y" path="res://MainScene/grey.gdshader" id="4_gn8cy"]
+[ext_resource type="Texture2D" uid="uid://dmcs7is2m5fgw" path="res://carpet.png" id="5_6kvet"]
 [ext_resource type="Texture2D" uid="uid://7m7os3vly3c" path="res://WhiteNoise/WhiteNoise1.png" id="5_6tl0i"]
+[ext_resource type="Texture2D" uid="uid://bjs5karl2ihe8" path="res://table.png" id="5_7g1bs"]
 [ext_resource type="Texture2D" uid="uid://bfa5gewcysell" path="res://InteractableObjects/Sprites/BananaStand.png" id="6_axymu"]
 [ext_resource type="Texture2D" uid="uid://b631qve628k1q" path="res://WhiteNoise/WhiteNoise2.png" id="6_g8jqs"]
 [ext_resource type="Texture2D" uid="uid://bq6rb8w3hnxt" path="res://InteractableObjects/Sprites/Match.png" id="6_hbof4"]
+[ext_resource type="Texture2D" uid="uid://ddysxngrgmar8" path="res://planet.png" id="6_lxrf5"]
 [ext_resource type="Texture2D" uid="uid://c7lkqs037tg66" path="res://Player/PlayerTestSprite.svg" id="6_n13s5"]
 [ext_resource type="Script" uid="uid://jg2xsyphbnba" path="res://InteractableObjects/interaction_right_door.gd" id="7_5ltmk"]
 [ext_resource type="Texture2D" uid="uid://wibkkd7c3o4c" path="res://WhiteNoise/WhiteNoise3.png" id="7_fhqjx"]
 [ext_resource type="Texture2D" uid="uid://o0ko7g3jlpsy" path="res://InteractableObjects/Sprites/Banana.png" id="7_hm72d"]
+[ext_resource type="Texture2D" uid="uid://dpd148l4nnf7e" path="res://bed.png" id="7_w4bql"]
+[ext_resource type="Texture2D" uid="uid://bgdxpvavpl0rs" path="res://cupboard.png" id="8_f2n67"]
 [ext_resource type="Texture2D" uid="uid://dsfabr5kjstsh" path="res://InteractableObjects/Sprites/Bomb_v1.png" id="8_fhqjx"]
 [ext_resource type="Texture2D" uid="uid://ddapimkwra8ky" path="res://TodoList/BlackFadeEndscreen.svg" id="9_1m37m"]
+[ext_resource type="Texture2D" uid="uid://bxrffx13wrevj" path="res://TV.png" id="9_3dkxt"]
 [ext_resource type="AudioStream" uid="uid://b3adkug8wqu5a" path="res://InteractableObjects/Sounds/bomb_in_pocket.wav" id="9_3fq07"]
 [ext_resource type="Script" uid="uid://cfpkn6t0lguvs" path="res://InteractableObjects/interaction_banana.gd" id="9_aol1h"]
 [ext_resource type="Script" uid="uid://d27tt4131quhy" path="res://MainScene/end_screen.gd" id="10_48xrq"]
@@ -41,9 +48,12 @@
 [ext_resource type="AudioStream" uid="uid://dkcyen3ao3itw" path="res://InteractableObjects/Sounds/b_banana.wav" id="19_pcagf"]
 [ext_resource type="Script" uid="uid://c8s6r3524bjmi" path="res://InteractableObjects/interaction_top_door.gd" id="20_36glv"]
 [ext_resource type="Texture2D" uid="uid://c13ay4jvrv714" path="res://InteractableObjects/Sprites/Glasses.png" id="20_vkmed"]
+[ext_resource type="AudioStream" uid="uid://cxp01ghe5h4av" path="res://InteractableObjects/Sounds/need_bait.wav" id="21_w4bql"]
+[ext_resource type="AudioStream" uid="uid://civdh2ckh5g1p" path="res://InteractableObjects/Sounds/caughtsomething.wav" id="22_f2n67"]
 [ext_resource type="Texture2D" uid="uid://d3lavq4pmbsi4" path="res://InteractableObjects/Sprites/Door.png" id="22_uk4g7"]
 [ext_resource type="Texture2D" uid="uid://bfwyiq24ej407" path="res://InteractableObjects/Sprites/Tilemap_v2.png" id="23_aol1h"]
 [ext_resource type="AudioStream" uid="uid://dtiy14yolmvxd" path="res://InteractableObjects/Sounds/door_and_keyhole.wav" id="26_edgvy"]
+[ext_resource type="AudioStream" uid="uid://cfcrs3ytf1va0" path="res://InteractableObjects/Sounds/KeyInBanana.wav" id="28_58ue2"]
 [ext_resource type="Texture2D" uid="uid://bmth2je5fffqg" path="res://InteractableObjects/Sprites/Explosion.png" id="29_b2ylh"]
 [ext_resource type="AudioStream" uid="uid://x3j1i7o7ki31" path="res://InteractableObjects/Sounds/lightTheCandle.wav" id="30_bvk0x"]
 [ext_resource type="Texture2D" uid="uid://cky3mjmn2ij4w" path="res://InteractableObjects/Sprites/SunGlasses.png" id="31_ffk8d"]
@@ -54,6 +64,9 @@
 [ext_resource type="Texture2D" uid="uid://dssqblfxsjnh3" path="res://InteractableObjects/checkmark.png" id="39_vkmed"]
 [ext_resource type="Texture2D" uid="uid://bsvp71vytvwp0" path="res://InteractableObjects/Sprites/Bananabread.png" id="39_wek03"]
 [ext_resource type="AudioStream" uid="uid://dnto842h4unyg" path="res://InteractableObjects/Sounds/default.wav" id="52_fu4q2"]
+[ext_resource type="Texture2D" uid="uid://do1wt0uc5djh" path="res://Frog.png" id="56_muvdu"]
+[ext_resource type="Texture2D" uid="uid://bu46ew06ykyt5" path="res://swing.png" id="58_muvdu"]
+[ext_resource type="Texture2D" uid="uid://b5vecv004au44" path="res://skeleton.png" id="59_axnvp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1dx1v"]
 texture = ExtResource("23_aol1h")
@@ -98,6 +111,10 @@ texture = ExtResource("3_1dx1v")
 sources/0 = SubResource("TileSetAtlasSource_1dx1v")
 sources/1 = SubResource("TileSetAtlasSource_t5cxr")
 sources/2 = SubResource("TileSetAtlasSource_hbof4")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k1deo"]
+shader = ExtResource("4_gn8cy")
+shader_parameter/intensity = 1.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_t5cxr"]
 animations = [{
@@ -233,10 +250,13 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5pvaf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_updh5")
 }],
 "loop": false,
 "name": &"b_interaction",
-"speed": 12.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -262,16 +282,19 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5pvaf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_updh5")
 }],
-"loop": true,
+"loop": false,
 "name": &"banana_interaction",
-"speed": 5.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_updh5")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -299,10 +322,13 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5pvaf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_updh5")
 }],
-"loop": true,
+"loop": false,
 "name": &"glasses_interaction",
-"speed": 5.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -328,10 +354,13 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5pvaf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_updh5")
 }],
-"loop": true,
+"loop": false,
 "name": &"key_interaction",
-"speed": 5.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -357,10 +386,13 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5pvaf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_updh5")
 }],
-"loop": true,
+"loop": false,
 "name": &"read_interaction",
-"speed": 5.0
+"speed": 15.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_36glv"]
@@ -1449,6 +1481,52 @@ scale = Vector2(8, 8)
 tile_map_data = PackedByteArray("AAABAP7/AgABAAEAAAAAAP7/AgABAAEAAAD///7/AgABAAEAAAD+//7/AgABAAEAAAD9//7/AgABAAEAAAD9////AgABAAEAAAAAAP//AgABAAEAAAABAP//AgABAAEAAAD/////AgABAAEAAAD+////AgABAAEAAAD9/wAAAgABAAEAAAD+/wAAAgABAAEAAAD//wAAAgABAAEAAAAAAAAAAgABAAEAAAABAAAAAgABAAEAAAABAAEAAgABAAEAAAAAAAEAAgABAAEAAAD//wEAAgABAAEAAAD+/wEAAgABAAEAAAD9/wEAAgABAAEAAAD+/wIAAgABAAIAAAD//wIAAgABAAIAAAAAAAIAAgABAAIAAAABAAIAAgABAAIAAAD+//3/AgABAAAAAAD///3/AgABAAAAAAAAAP3/AgABAAAAAAABAP3/AgABAAAAAAD9/wIAAgABAAIAAAD9//3/AgABAAAAAAD6//3/AgAAAAAAAAD6//7/AgAAAAEAAAD6////AgAAAAEAAAD6/wIAAgAAAAIAAAD7//3/AgABAAAAAAD7//7/AgABAAEAAAD7/wAAAAABAAEAAAD7/wEAAAABAAEAAAD7/wIAAgABAAIAAAD8//3/AgABAAAAAAD8//7/AgABAAEAAAD8////AgABAAEAAAD8/wAAAgABAAEAAAD8/wEAAgABAAEAAAD8/wIAAgABAAIAAAACAP3/AgABAAAAAAACAP7/AgABAAEAAAACAP//AgABAAEAAAACAAAAAgABAAEAAAACAAEAAgABAAEAAAACAAIAAgABAAIAAAADAP3/AgABAAAAAAADAP7/AgABAAEAAAADAP//AgABAAEAAAADAAAAAgABAAEAAAADAAEAAgABAAEAAAADAAIAAgABAAIAAAAEAP3/AgABAAAAAAAEAP7/AgABAAEAAAAEAP//AgABAAEAAAAEAAAAAgABAAEAAAAEAAEAAgABAAEAAAAEAAIAAgABAAIAAAAFAP7/AgACAAEAAAAFAP//AAABAAEAAAAFAAAAAgACAAEAAAAFAAEAAgACAAEAAAAFAAIAAgACAAIAAAD7////AgABAAEAAAD6/wEAAgAAAAEAAAD6/wAAAgAAAAEAAADz//7/AgABAAEAAAD0//7/AgABAAEAAAD1//7/AgABAAEAAAD2//7/AgABAAEAAAD3//7/AgABAAEAAADy//7/AgABAAEAAADy/wIAAgABAAIAAADz/wIAAgABAAIAAAD0/wIAAgABAAIAAAD1/wIAAgABAAIAAAD2/wIAAgABAAIAAAD3/wIAAgABAAIAAAD4/wIAAgACAAIAAAD4////AgACAAEAAAD4/wAAAgACAAEAAAD4/wEAAgACAAEAAAD4//7/AgACAAEAAADx//7/AgABAAEAAADx/wIAAgABAAIAAADw/wIAAgAAAAIAAADw//7/AgAAAAEAAADw////AgAAAAEAAADw/wAAAgAAAAEAAADw/wEAAgAAAAEAAADy////AgABAAEAAADy/wAAAgABAAEAAADz////AgABAAEAAAD0////AgABAAEAAAD1////AgABAAEAAAD2////AgABAAEAAADz/wAAAgABAAEAAAD0/wAAAgABAAEAAAD1/wAAAgABAAEAAAD2/wAAAgABAAEAAAAFAP3/AgACAAAAAAD9//v/AgABAAIAAAD+//f/AgABAAEAAAD+//j/AgABAAEAAAD+//n/AgABAAEAAAD///f/AgABAAEAAAD///r/AgABAAEAAAD///v/AgABAAIAAAAAAPf/AgABAAEAAAAAAPj/AgABAAEAAAAAAPn/AgABAAEAAAAAAPr/AgABAAEAAAAAAPv/AgABAAEAAAABAPf/AgABAAEAAAABAPj/AgABAAEAAAABAPn/AgABAAEAAAABAPr/AgABAAEAAAABAPv/AgABAAIAAAACAPf/AgABAAEAAAACAPj/AgABAAEAAAACAPn/AgABAAEAAAACAPr/AgABAAEAAAACAPv/AgABAAIAAAADAPf/AgABAAEAAAADAPj/AgABAAEAAAADAPn/AgABAAEAAAADAPr/AgABAAEAAAADAPv/AgABAAIAAAAEAPn/AgABAAEAAAAEAPr/AgABAAEAAAAEAPv/AgABAAIAAAAFAPv/AgABAAIAAAD+//v/AgABAAIAAAD///n/AgABAAEAAAD8//v/AgABAAIAAAD7//v/AgABAAIAAAD6//v/AgABAAIAAAD5//v/AgABAAIAAAD4//v/AgABAAIAAAD3//v/AgABAAIAAAD2//v/AgABAAIAAAAGAPv/AgABAAIAAAAHAPv/AgABAAIAAAAIAPv/AgABAAIAAAAJAPv/AgABAAIAAAAKAPv/AgABAAIAAAALAPv/AgABAAIAAAAMAPv/AgABAAIAAAANAPv/AgABAAIAAAD1//v/AgABAAIAAAD0//v/AgABAAIAAADz//v/AgABAAIAAADy//v/AgABAAIAAADx//v/AgABAAIAAADw//v/AgABAAIAAADv//v/AgABAAIAAADu//v/AgABAAIAAADt//v/AgABAAIAAADs//v/AgABAAIAAADr//v/AgABAAIAAADq//v/AgABAAIAAADp//v/AgABAAIAAAAOAPv/AgABAAIAAAAPAPv/AgABAAIAAAAQAPv/AgABAAIAAAARAPv/AgABAAIAAAASAPv/AgABAAIAAAATAPv/AgABAAIAAAAUAPv/AgABAAIAAAAVAPv/AgABAAIAAAAWAPv/AgABAAIAAAAXAPv/AgABAAIAAAAYAPv/AgABAAIAAAAZAPv/AgABAAIAAADy//3/AgABAAEAAAD4//3/AgACAAEAAAD3//z/AgABAAAAAAD2//z/AgABAAAAAAD1//z/AgABAAAAAAD0//z/AgABAAAAAADz//z/AgABAAAAAADy//z/AgABAAAAAADx//z/AgABAAAAAADw//3/AgAAAAEAAADw//z/AgAAAAAAAAD4//z/AgACAAAAAAA=")
 tile_set = SubResource("TileSet_t5cxr")
 
+[node name="Carpet" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.5019608)
+self_modulate = Color(1, 1, 1, 0.84313726)
+texture_filter = 1
+material = SubResource("ShaderMaterial_k1deo")
+position = Vector2(34.999996, 17)
+rotation = 1.7366027
+texture = ExtResource("5_6kvet")
+
+[node name="Table" type="Sprite2D" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_k1deo")
+position = Vector2(-343, 188.00002)
+scale = Vector2(0.56, 0.31)
+texture = ExtResource("5_7g1bs")
+
+[node name="Planet" type="Sprite2D" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_k1deo")
+position = Vector2(-2519, 339)
+scale = Vector2(1.715, 1.715)
+texture = ExtResource("6_lxrf5")
+
+[node name="Bed" type="Sprite2D" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_k1deo")
+position = Vector2(-1702, -353)
+texture = ExtResource("7_w4bql")
+
+[node name="Cupboard" type="Sprite2D" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_k1deo")
+position = Vector2(-1805.0001, -238.00002)
+scale = Vector2(0.56, 1)
+skew = -0.14835298
+texture = ExtResource("8_f2n67")
+flip_h = true
+
+[node name="TV" type="Sprite2D" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_k1deo")
+position = Vector2(510, -311)
+scale = Vector2(0.575, 0.599)
+texture = ExtResource("9_3dkxt")
+flip_h = true
+
 [node name="Pond" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(-2, -872)
@@ -1492,6 +1570,9 @@ animation = &"match_interaction"
 autoplay = "default"
 script = ExtResource("9_aol1h")
 
+[node name="KeyInBanana" type="AudioStreamPlayer" parent="InteractableBanana"]
+stream = ExtResource("28_58ue2")
+
 [node name="InteractablePond" parent="." instance=ExtResource("2_qjv46")]
 position = Vector2(-66, -808)
 obj_name = "pond"
@@ -1505,6 +1586,12 @@ sprite_frames = SubResource("SpriteFrames_yhuqc")
 animation = &"banana_interaction"
 autoplay = "default"
 script = ExtResource("13_p7i6w")
+
+[node name="NeedBait" type="AudioStreamPlayer" parent="InteractablePond"]
+stream = ExtResource("21_w4bql")
+
+[node name="CaughtSomething" type="AudioStreamPlayer" parent="InteractablePond"]
+stream = ExtResource("22_f2n67")
 
 [node name="InteractableBananaSlices" parent="." instance=ExtResource("2_qjv46")]
 position = Vector2(-846, 1945)
@@ -1520,7 +1607,7 @@ autoplay = "default"
 script = ExtResource("13_yhuqc")
 
 [node name="InteractableKnive" parent="." instance=ExtResource("2_qjv46")]
-position = Vector2(-1568, -80)
+position = Vector2(-1405, -331)
 is_pickup = true
 obj_name = "knive"
 
@@ -1532,6 +1619,9 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_uk4g7")
 autoplay = "default"
 script = ExtResource("13_wvtj6")
+
+[node name="KeyInBanana" type="AudioStreamPlayer" parent="InteractableKnive"]
+stream = ExtResource("28_58ue2")
 
 [node name="InteractableB" parent="." instance=ExtResource("2_qjv46")]
 position = Vector2(-1181, -388)
@@ -1555,12 +1645,12 @@ stream = ExtResource("18_8td7h")
 stream = ExtResource("19_pcagf")
 
 [node name="InteractableGlasses" parent="." instance=ExtResource("2_qjv46")]
-position = Vector2(-1824, 160)
+position = Vector2(-1834, -368)
 is_pickup = true
 obj_name = "glasses"
 
 [node name="WalkPosition" type="Node2D" parent="InteractableGlasses"]
-position = Vector2(-0.5, -12.875)
+position = Vector2(10, 36.875)
 
 [node name="Sprite" type="AnimatedSprite2D" parent="InteractableGlasses"]
 texture_filter = 1
@@ -1673,9 +1763,6 @@ flip_h = true
 flip_v = true
 script = ExtResource("7_5ltmk")
 
-[node name="PlayerCharacter" parent="." instance=ExtResource("1_fyr3e")]
-position = Vector2(-196, -3)
-
 [node name="UICanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Inventory" type="Sprite2D" parent="UICanvasLayer" groups=["Inventory"]]
@@ -1739,7 +1826,7 @@ text = "[center]
 [cell][/cell][cell][/cell]
 
 [cell][font size=24][color=#FFD088]Music & Sound[/color][/font][/cell]
-[cell][font size=34][b][color=#FFFFFF]freesound.org[/color][/b][/font][/cell]
+[cell][font size=34][b][color=#FFFFFF]Joshua Kirchberg[/color][/b][/font][/cell]
 
 [cell][/cell][cell][/cell]
 
@@ -1819,6 +1906,47 @@ texture = ExtResource("39_wek03")
 stream = ExtResource("14_55fm0")
 autoplay = true
 
+[node name="Fishing1" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+material = SubResource("ShaderMaterial_k1deo")
+position = Vector2(293.00006, -1094)
+scale = Vector2(-0.615, 0.615)
+texture = ExtResource("58_muvdu")
+
+[node name="Fishing2" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+material = SubResource("ShaderMaterial_k1deo")
+position = Vector2(-87.00001, -1428)
+scale = Vector2(-1.265, 1.265)
+texture = ExtResource("59_axnvp")
+flip_h = true
+
+[node name="Fishing3" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+material = SubResource("ShaderMaterial_k1deo")
+position = Vector2(-454.99997, -1207)
+scale = Vector2(-0.615, 0.615)
+texture = ExtResource("56_muvdu")
+flip_v = true
+
+[node name="Frog2" type="Sprite2D" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_k1deo")
+position = Vector2(-453.99997, -919.99994)
+rotation = 3.1415927
+scale = Vector2(0.615, -0.615)
+texture = ExtResource("56_muvdu")
+
+[node name="Frog" type="Sprite2D" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_k1deo")
+position = Vector2(276, -1086.9999)
+scale = Vector2(0.505, 0.505)
+texture = ExtResource("56_muvdu")
+
 [node name="Deatheffect" type="AnimatedSprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)
 z_index = 10
@@ -1834,5 +1962,8 @@ libraries = {
 
 [node name="Default" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("52_fu4q2")
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("1_fyr3e")]
+position = Vector2(-196, -3)
 
 [connection signal="pressed" from="CreditsCanvasLayer/RetryButton" to="CreditsCanvasLayer" method="_on_retry_button_pressed"]

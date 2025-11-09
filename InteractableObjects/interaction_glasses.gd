@@ -12,6 +12,7 @@ func execute_interaction():
 			interactable.pick_up(interactable.obj_name)
 		"b_letter":
 			$"../../UICanvasLayer/Sunglasses".show()
+			GlobalStates.empty_inventory()
 		
 		_:
 			$"../../Default".play()

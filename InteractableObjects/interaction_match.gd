@@ -24,6 +24,7 @@ func execute_interaction():
 			$"../../UICanvasLayer/TalkingGorilla".play("talk")
 			
 			GlobalStates.is_interacting = false
+			interactable.position = Vector2(5000,5000)
 
 			await animation_player.animation_finished
 			if GlobalStates.dynamite_is_lit:
@@ -43,7 +44,8 @@ func execute_interaction():
 			$"../BombInPocket".play()
 			
 			GlobalStates.is_interacting = false
-
+			interactable.position = Vector2(5000,5000)
+			
 			await animation_player.animation_finished
 			if GlobalStates.banana_bomb_is_lit:
 				GlobalStates.reset_globals()

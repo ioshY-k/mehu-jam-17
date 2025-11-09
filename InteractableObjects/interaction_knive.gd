@@ -14,7 +14,10 @@ func execute_interaction():
 			$"../../CreditsCanvasLayer/CheckList/ChackemarkBanana".show()
 			GlobalStates.empty_inventory()
 			GlobalStates.create_inventory_object("key")
+			$"../KeyInBanana".play()
+			$"../../UICanvasLayer/TalkingGorilla".play("talk")
 			$"../../InteractableBananaSlices".position = $"../../PlayerCharacter".position
+			await $"../KeyInBanana".finished
 			get_parent().queue_free()
 			
 		_:
