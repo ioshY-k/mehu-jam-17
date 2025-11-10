@@ -39,6 +39,9 @@ func player_walks_towards_obj_pos():
 func _on_area_2d_mouse_entered() -> void:
 	hovered = true
 	player.tooltip.show()
+	player.tooltip.global_position = global_position
+	var g = global_position
+	var gg = player.tooltip.global_position
 	if GlobalStates.inventory_object_name == "":
 		if is_pickup:
 			player.tooltip.text = "Pick up " + obj_name

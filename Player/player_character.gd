@@ -16,12 +16,6 @@ func _ready() -> void:
 	SignalBus.player_walk_towards.connect(_on_player_walks_toward)
 
 func _on_player_walks_toward(obj_pos: Vector2):
-	if obj_pos.x < position.x:
-		scale.x = -8
-		tooltip.scale.x = -8
-	else:
-		scale.x = 8
-		tooltip.scale.x = 8
 	play("walk")
 	var tween = create_tween().set_trans(Tween.TRANS_SPRING).set_ease(Tween.EASE_OUT)
 	tween.tween_property(self, "position", obj_pos, Consts.player_walk_speed)
